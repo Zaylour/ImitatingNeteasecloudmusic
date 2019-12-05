@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<!--    duration:时长-->
+<!--    fromAlpha：设置透明度的初始值，其中0.0是透明，1.0是不透明的。-->
+<!--    toAlpha：设置透明度的结束值，其中0.0是透明，1.0是不透明的。-->
+    <alpha
+        android:duration="2000"
+        android:fromAlpha="1.0"
+        android:toAlpha="0"
+        />
+</set>
