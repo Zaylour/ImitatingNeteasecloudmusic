@@ -1,4 +1,4 @@
-package com.zay.FlexibleTag
+package com.zay.Music
 
 import org.junit.Test
 

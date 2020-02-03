@@ -1,11 +1,70 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/White</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/White</item>
+
     </style>
 
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="LoginTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/White</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/White</item>
+<!--        <item name="android:fitsSystemWindows">true</item>-->
+    </style>
+
+    TabLayoutTextSize
+
+
+    <style name="TabLayoutTextSize1">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TabLayoutTextSize2">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TabLayoutTextSize" parent="Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@color/White</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabSelectedTextColor">@color/Black39</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/tabGrey</item>
+    </style>
+
+<!--    <style name="QMUI.RoundButton" parent="@style/Button">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        &lt;!&ndash;<item name="android:padding">0dp</item>&ndash;&gt;&lt;!&ndash; 不用 android:padding，而用各个方向分别指定 padding，方便子类覆盖 &ndash;&gt;-->
+<!--        <item name="android:paddingLeft">0dp</item>-->
+<!--        <item name="android:paddingRight">0dp</item>-->
+<!--        <item name="android:paddingTop">0dp</item>-->
+<!--        <item name="android:paddingBottom">0dp</item>-->
+<!--        <item name="android:minWidth">0dp</item>-->
+<!--        <item name="android:minHeight">0dp</item>-->
+<!--        <item name="android:singleLine">true</item>-->
+<!--        <item name="android:gravity">center</item>-->
+<!--        <item name="android:ellipsize">end</item>-->
+<!--        <item name="qmui_isRadiusAdjustBounds">true</item>-->
+<!--        <item name="qmui_backgroundColor">@color/qmui_s_transparent</item>-->
+<!--        <item name="qmui_borderWidth">?attr/qmui_round_btn_border_width</item>-->
+<!--        <item name="qmui_borderColor">?attr/qmui_round_btn_border_color</item>-->
+<!--        <item name="android:textColor">?attr/qmui_round_btn_text_color</item>-->
+<!--    </style>-->
 </resources>

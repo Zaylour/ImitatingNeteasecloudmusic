@@ -1,12 +1,11 @@
-package com.zay.FlexibleTag.CustomView
+package com.zay.Music.CustomView
 
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.view.animation.RotateAnimation
 import androidx.appcompat.app.AppCompatActivity
-import com.zay.FlexibleTag.R
+import com.zay.Music.R
 import kotlinx.android.synthetic.main.label_avtivity.*
 class TagActivity :AppCompatActivity() {
     private val lableSelected = mutableListOf<String>()

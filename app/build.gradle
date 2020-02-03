@@ -8,12 +8,13 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.zay.FlexibleTag"
-        minSdkVersion 15
+        applicationId "com.zay.Music"
+        minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,4 +32,31 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+   // implementation "com.google.android.material:material:1.0.0"
+    //mmkv
+    implementation 'com.tencent:mmkv:1.0.23'
+    //Rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //banner
+   // implementation 'com.youth.banner:banner:2.0.0-alpha'
+    implementation 'com.github.xiaohaibin:XBanner:androidx_v1.0.5'
+    //adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    //工具库
+    implementation 'com.blankj:utilcode:1.25.9'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //doraemonkit-滴滴开源性能库
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.0.1'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.1'
+    //QMUI腾讯ui
+    implementation 'com.qmuiteam:qmui:2.0.0-alpha02'
+    implementation 'com.android.support:multidex:1.0.3'
 }

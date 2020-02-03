@@ -1,4 +1,4 @@
-package com.zay.FlexibleTag.CustomView
+package com.zay.Music.CustomView
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,9 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import android.widget.TextView
-import com.zay.FlexibleTag.R
+import com.zay.Music.R
 class Tag : ViewGroup {
     private val TAG = "MyTag"
     //标签数据
