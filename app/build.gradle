@@ -4,11 +4,12 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.zay.Music"
+        applicationId "com.zay.music"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 100
@@ -22,6 +23,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -32,7 +37,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-   // implementation "com.google.android.material:material:1.0.0"
     //mmkv
     implementation 'com.tencent:mmkv:1.0.23'
     //Rxjava
@@ -47,6 +51,7 @@ dependencies {
    // implementation 'com.youth.banner:banner:2.0.0-alpha'
     implementation 'com.github.xiaohaibin:XBanner:androidx_v1.0.5'
     //adapter
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
     //工具库
     implementation 'com.blankj:utilcode:1.25.9'
@@ -56,7 +61,11 @@ dependencies {
     //doraemonkit-滴滴开源性能库
     debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.0.1'
     releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.1'
+    //屏幕适配
+    implementation 'me.jessyan:autosize:1.2.0'
     //QMUI腾讯ui
     implementation 'com.qmuiteam:qmui:2.0.0-alpha02'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 }

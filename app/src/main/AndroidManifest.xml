@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zay.Music">
+    package="com.zay.music">
     <application
-        android:name=".MainApplication"
+        android:name="com.zay.music.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.zay.Music.SpalshActivity"
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360"/>
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640"/>
+    <activity android:name="com.zay.music.SpalshActivity"
             android:theme="@style/SplashTheme"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -22,17 +29,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.zay.Music.Module.MainModule.MainActivity"
+        <activity android:name="com.zay.music.module.mainmodule.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             />
-        <activity android:name="com.zay.Music.CustomView.TagActivity"
+        <activity android:name="com.zay.music.CustomView.TagActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             />
-        <activity android:name=".Module.LoginModule.LoginActivity"
+        <activity android:name="com.zay.music.module.loginmodule.LoginActivity"
             android:theme="@style/LoginTheme"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
