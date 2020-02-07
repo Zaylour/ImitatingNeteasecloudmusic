@@ -12,4 +12,8 @@ interface Api {
     @FormUrlEncoded
     @POST("banner")
     fun getBanner(@Field("type") type: Int): Observable<BannerDataBean>
+
+
+
+
 }

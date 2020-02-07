@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.zay.music.module.mainmodule.found.FoundFragment
+import com.zay.music.module.mainmodule.found.FoundViewModel
 import com.zay.music.module.mainmodule.my.MyFragment
 import com.zay.music.module.mainmodule.video.VideoFragment
 import com.zay.music.module.mainmodule.yuncun.YunCunFragment

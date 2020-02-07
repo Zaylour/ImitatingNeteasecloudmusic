@@ -19,14 +19,13 @@
         <com.stx.xhb.androidx.XBanner
             android:id="@+id/xbanner"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="80dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="88dp"
             app:AutoPlayTime="3000"
-            app:isShowIndicatorOnlyOne="false"
-            app:isClipChildrenMode="true"
             app:clipChildrenLeftRightMargin="20dp"
             app:clipChildrenTopBottomMargin="0dp"
-            app:viewpagerMargin="40dp"
+            app:isClipChildrenMode="true"
+            app:isShowIndicatorOnlyOne="false"
             app:isShowNumberIndicator="false"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -36,7 +35,159 @@
             app:pointSelect="@drawable/shape_selected"
             app:pointTopBottomPadding="5dp"
             app:pointsPosition="CENTER"
-            app:tipTextSize="12sp" />
+            app:tipTextSize="12sp"
+            app:viewpagerMargin="40dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/xbanner"
+            android:layout_marginTop="15dp"
+            >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btn1"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circle"
+                android:src="@mipmap/z03"
+                app:civ_border_color="@color/SplashRed"
+                app:civ_border_width="0dp"
+                app:civ_border_overlay="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="每日推荐"
+                android:layout_marginTop="5dp"
+                android:textSize="12dp"
+                />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/z04"
+                    app:civ_border_color="@color/SplashRed"
+                    app:civ_border_width="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="歌单"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/z05"
+                    app:civ_border_color="@color/SplashRed"
+                    app:civ_border_width="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="排行榜"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn4"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/z06"
+                    app:civ_border_color="@color/SplashRed"
+                    app:civ_border_width="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="电台"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn5"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/z07"
+                    app:civ_border_color="@color/SplashRed"
+                    app:civ_border_width="0dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="直播"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
 
 
         <TextView
@@ -47,8 +198,9 @@
             android:text="@{foundViewModel.nameLiveData}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/xbanner" />
-
+            app:layout_constraintTop_toBottomOf="@+id/xbanner"
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/test"
@@ -59,7 +211,9 @@
             android:text="点击"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_only_live" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_only_live"
+            android:visibility="gone"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

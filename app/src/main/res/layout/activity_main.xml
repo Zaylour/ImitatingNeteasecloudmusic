@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="42dp"
         />
 
     <com.google.android.material.tabs.TabLayout
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="27dp"
         app:tabIndicatorHeight="0dp"
         app:tabSelectedTextColor="@color/Black39"
         app:tabTextAppearance="@style/TabLayoutTextSize"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="42dp"
         />
 
 

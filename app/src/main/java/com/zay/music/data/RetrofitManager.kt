@@ -1,6 +1,7 @@
 package com.zay.music.data
 
 import android.util.Log
+import com.orhanobut.logger.Logger
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,19 +11,23 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitManager {
     lateinit var api: Api
+
     private object Holder {
         val INSTANCE = RetrofitManager()
     }
+
     companion object {
         val instance by lazy { Holder.INSTANCE }
     }
+
     //懒加载
     fun init() {
         val builder = OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(20, TimeUnit.SECONDS)
         val logging = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
-            Log.e("apiData", it)//这里打印的是网络请求过程的信息
+            //这里打印的是网络请求过程的信息
+            Logger.t("apiData").e(it)
         })
         logging.level = HttpLoggingInterceptor.Level.BODY
         builder.addInterceptor(logging)

@@ -11,16 +11,18 @@ import me.jessyan.autosize.unit.Subunits
 class MainApplication :Application() {
     companion object{
         var appContext:Context? = null
+        var appApplication:Application? = null
     }
     override fun onCreate() {
         super.onCreate()
         appContext=this
+        appApplication=this
         //mmkv初始化
         MMKV.initialize(this)
         //网络接口初始化
         RetrofitManager.instance.init()
         //性能检测
-        DoraemonKit.install(this)
+        //DoraemonKit.install(this)
         //屏幕适配
         AutoSizeConfig.getInstance().getUnitsManager()
             .setSupportDP(false)

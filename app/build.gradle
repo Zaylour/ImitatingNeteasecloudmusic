@@ -50,6 +50,8 @@ dependencies {
     //banner
    // implementation 'com.youth.banner:banner:2.0.0-alpha'
     implementation 'com.github.xiaohaibin:XBanner:androidx_v1.0.5'
+    //logger
+    implementation 'com.orhanobut:logger:2.2.0'
     //adapter
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
@@ -63,6 +65,8 @@ dependencies {
     releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.1'
     //屏幕适配
     implementation 'me.jessyan:autosize:1.2.0'
+    //圆形图片
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     //QMUI腾讯ui
     implementation 'com.qmuiteam:qmui:2.0.0-alpha02'
     implementation 'com.android.support:multidex:1.0.3'
