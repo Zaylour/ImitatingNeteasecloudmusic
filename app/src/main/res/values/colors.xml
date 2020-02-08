@@ -5,8 +5,11 @@
     <color name="colorAccent">#D81B60</color>
     <color name="SplashRed">#DD2D1E</color>
     <color name="bannerRed">#E94D50</color>
+    <color name="index_btn">#FC5244</color>
     <color name="White">#FFFFFF</color>
     <color name="Black">#000000</color>
     <color name="Black39">#393939</color>
+    <color name="Black33">#333333</color>
     <color name="tabGrey">#9B9B9B</color>
+    <color name="index_title1">#B3B3B3</color>
 </resources>

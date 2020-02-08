@@ -20,12 +20,12 @@ class BaseObserver<T : BaseResponse<*>>(
     override fun onNext(response: T) {
         when (response.code) {
             Constant.SUCCESS -> {
-                if (response.data is List<*>) {
-                    if ((response.data as List<*>).isEmpty()) {
-                        loadState.postValue(State(StateType.EMPTY))
-                        return
-                    }
-                }
+//                if (response.data is List<*>) {
+//                    if ((response.data as List<*>).isEmpty()) {
+//                        loadState.postValue(State(StateType.EMPTY))
+//                        return
+//                    }
+//                }
                 loadState.postValue(State(StateType.SUCCESS))
                 liveData.postValue(response)
             }

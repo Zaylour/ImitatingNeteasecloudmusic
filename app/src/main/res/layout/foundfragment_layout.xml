@@ -10,210 +10,356 @@
             type="com.zay.music.module.mainmodule.found.FoundViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <com.stx.xhb.androidx.XBanner
-            android:id="@+id/xbanner"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="123dp"
-            android:layout_marginTop="88dp"
-            app:AutoPlayTime="3000"
-            app:clipChildrenLeftRightMargin="20dp"
-            app:clipChildrenTopBottomMargin="0dp"
-            app:isClipChildrenMode="true"
-            app:isShowIndicatorOnlyOne="false"
-            app:isShowNumberIndicator="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:pageChangeDuration="800"
-            app:pointNormal="@drawable/shape_noraml"
-            app:pointSelect="@drawable/shape_selected"
-            app:pointTopBottomPadding="5dp"
-            app:pointsPosition="CENTER"
-            app:tipTextSize="12sp"
-            app:viewpagerMargin="40dp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/xbanner"
-            android:layout_marginTop="15dp"
-            >
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
             android:gravity="center"
-            >
+            android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/btn1"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
+            <com.stx.xhb.androidx.XBanner
+                android:id="@+id/xbanner"
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginTop="88dp"
+                app:AutoPlayTime="3000"
+                app:clipChildrenLeftRightMargin="20dp"
+                app:clipChildrenTopBottomMargin="0dp"
+                app:isClipChildrenMode="true"
+                app:isShowIndicatorOnlyOne="false"
+                app:isShowNumberIndicator="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:pageChangeDuration="800"
+                app:pointNormal="@drawable/shape_noraml"
+                app:pointSelect="@drawable/shape_selected"
+                app:pointTopBottomPadding="5dp"
+                app:pointsPosition="CENTER"
+                app:tipTextSize="12sp"
+                app:viewpagerMargin="40dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/circle"
-                android:src="@mipmap/z03"
-                app:civ_border_color="@color/SplashRed"
-                app:civ_border_width="0dp"
-                app:civ_border_overlay="true"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:weightSum="5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/xbanner"
+                android:layout_marginTop="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn1"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:src="@mipmap/z03"
+                        app:civ_border_color="@color/SplashRed"
+                        app:civ_border_width="0dp"
+                        app:civ_border_overlay="true"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="每日推荐"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn2"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:src="@mipmap/z04"
+                        app:civ_border_color="@color/SplashRed"
+                        app:civ_border_width="0dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="歌单"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn3"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:src="@mipmap/z05"
+                        app:civ_border_color="@color/SplashRed"
+                        app:civ_border_width="0dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="排行榜"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn4"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:src="@mipmap/z06"
+                        app:civ_border_color="@color/SplashRed"
+                        app:civ_border_width="0dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="电台"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btn5"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:src="@mipmap/z07"
+                        app:civ_border_color="@color/SplashRed"
+                        app:civ_border_width="0dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="直播"
+                        android:layout_marginTop="5dp"
+                        android:textSize="11dp"
+
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_tuijian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="推荐歌单"
+                app:layout_constraintTop_toBottomOf="@+id/ll_btn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/index_title1"
                 />
 
             <TextView
+                android:id="@+id/tv_tuijian2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="每日推荐"
-                android:layout_marginTop="5dp"
-                android:textSize="12dp"
+                android:textSize="16dp"
+                android:text="为你精挑细选"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tuijian"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/Black33"
                 />
-        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/btn_tjgd"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
+                android:textSize="12dp"
+                android:text="查看更多"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tuijian"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="20dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:gravity="center"
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/btn2"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/circle"
-                    android:src="@mipmap/z04"
-                    app:civ_border_color="@color/SplashRed"
-                    app:civ_border_width="0dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="歌单"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    />
-            </LinearLayout>
+                android:textColor="@color/Black33"
+                android:background="@drawable/more"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_tuijian2"
+                />
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/personalizedReccyView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/btn3"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/circle"
-                    android:src="@mipmap/z05"
-                    app:civ_border_color="@color/SplashRed"
-                    app:civ_border_width="0dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="排行榜"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    />
-            </LinearLayout>
+                android:divider="@null"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tuijian2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                />
 
-            <LinearLayout
-                android:layout_width="0dp"
+
+
+
+
+            <TextView
+                android:id="@+id/tv_djtuijian"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/btn4"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/circle"
-                    android:src="@mipmap/z06"
-                    app:civ_border_color="@color/SplashRed"
-                    app:civ_border_width="0dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="电台"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    />
-            </LinearLayout>
+                android:textSize="12dp"
+                android:text="电台推荐"
+                app:layout_constraintTop_toBottomOf="@+id/personalizedReccyView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/index_title1"
+                />
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_djtuijian2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
+                android:textSize="16dp"
+                android:text="精品电台推荐"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tv_djtuijian"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/Black33"
+                />
+
+            <TextView
+                android:id="@+id/btn_tjdj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="查看更多"
+                app:layout_constraintTop_toBottomOf="@+id/tv_djtuijian"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="20dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:gravity="center"
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/btn5"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/circle"
-                    android:src="@mipmap/z07"
-                    app:civ_border_color="@color/SplashRed"
-                    app:civ_border_width="0dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="直播"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
+                android:textColor="@color/Black33"
+                android:background="@drawable/more"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_djtuijian2"
+                />
 
-                    />
-            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/djReccyView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                app:layout_constraintTop_toBottomOf="@+id/tv_djtuijian2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                />
 
 
-        </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/txt_only_live"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@{foundViewModel.nameLiveData}"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/xbanner"
-            android:visibility="gone"
-            />
 
-        <TextView
-            android:id="@+id/test"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@color/SplashRed"
-            android:text="点击"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_only_live"
-            android:visibility="gone"
-            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/txt_only_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@{foundViewModel.nameLiveData}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/xbanner"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/SplashRed"
+                android:text="点击"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_only_live"
+                android:visibility="gone"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
 </layout>
