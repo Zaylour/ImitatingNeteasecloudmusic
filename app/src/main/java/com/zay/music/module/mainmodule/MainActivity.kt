@@ -3,20 +3,34 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Gravity
 import com.zay.music.R
 import kotlinx.android.synthetic.main.activity_main.*
 import com.zay.music.module.mainmodule.adapter.MyPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import android.widget.TextView
 import android.view.View
+import androidx.core.view.GravityCompat
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
+import kotlinx.android.synthetic.main.main_drawerlayout.*
+import com.billy.android.swipe.consumer.StretchConsumer
+import com.billy.android.swipe.SmartSwipe
+
+
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.zay.music.R.layout.activity_main)
         QMUIStatusBarHelper.translucent(this)
         QMUIStatusBarHelper.setStatusBarLightMode(this)
+        //https://qibilly.com/SmartSwipe-tutorial/
+//        SmartSwipe.wrap(this)
+//            .addConsumer(StretchConsumer())
+//            .enableVertical()
         initTabItem()
+        initOpenDrawer()
     }
     //初始化tabItem
     fun initTabItem(){
@@ -29,9 +43,6 @@ class MainActivity : AppCompatActivity() {
             tab.setCustomView(inflate)
             tab_layout.addTab(tab)
         }
-
-
-
         //自定义的Adapter继承自FragmentPagerAdapter
         val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.getTabCount())
         //ViewPager设置Adapter
@@ -72,6 +83,14 @@ class MainActivity : AppCompatActivity() {
         tab_layout.getTabAt(1)!!.select()
     }
 
+    fun initOpenDrawer(){
+        openDrawer.setOnClickListener {
+           if( drawerLayout.isDrawerOpen(GravityCompat.START)){
 
+           }else{
+               drawerLayout.openDrawer(GravityCompat.START)
+           }
+        }
+    }
 
 }
