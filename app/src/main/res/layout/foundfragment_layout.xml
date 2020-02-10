@@ -256,6 +256,64 @@
 
 
 
+            <TextView
+                android:id="@+id/tv_newsong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="推荐新歌"
+                app:layout_constraintTop_toBottomOf="@+id/personalizedReccyView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/index_title1"
+                />
+
+            <TextView
+                android:id="@+id/tv_newsong2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="精品新歌推荐"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tv_newsong"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/Black33"
+                />
+
+            <TextView
+                android:id="@+id/btn_xgtd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="播放全部"
+                app:layout_constraintTop_toBottomOf="@+id/tv_newsong2"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="20dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textColor="@color/Black33"
+                android:background="@drawable/more"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_newsong2"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newSongReccyView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                app:layout_constraintTop_toBottomOf="@+id/tv_newsong2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                />
+
+
 
             <TextView
                 android:id="@+id/tv_djtuijian"
@@ -263,7 +321,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
                 android:text="电台推荐"
-                app:layout_constraintTop_toBottomOf="@+id/personalizedReccyView"
+                app:layout_constraintTop_toBottomOf="@+id/newSongReccyView"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="25dp"
@@ -314,6 +372,19 @@
                 android:layout_marginTop="15dp"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/djReccyView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="到底啦~"
+                android:textColor="@color/index_title1"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                />
 
 
 

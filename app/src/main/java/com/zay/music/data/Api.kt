@@ -2,6 +2,7 @@ package com.zay.music.data
 
 import com.zay.music.module.mainmodule.bean.BannerDataBean
 import com.zay.music.module.mainmodule.bean.DjPayBean
+import com.zay.music.module.mainmodule.bean.NewSongBaen
 import com.zay.music.module.mainmodule.bean.RecommendSongs
 import io.reactivex.Observable
 import retrofit2.http.Field
@@ -29,6 +30,11 @@ interface Api {
     @FormUrlEncoded
     @POST("dj/toplist/pay")
     fun djToplistPay(@Field("limit") limit: Int): Observable<DjPayBean>
+
+    //推荐新歌
+    @POST("personalized/newsong")
+    fun RecommendNewSong(): Observable<NewSongBaen>
+
 
 
 

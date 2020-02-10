@@ -1,5 +1,7 @@
 package com.zay.music.module.mainmodule.bean;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+
 import com.zay.music.data.BaseResponse;
 
 import java.util.List;

@@ -8,6 +8,7 @@ import com.zay.music.base.BaseViewModel
 import com.zay.music.data.BaseResponse
 import com.zay.music.module.mainmodule.bean.BannerDataBean
 import com.zay.music.module.mainmodule.bean.DjPayBean
+import com.zay.music.module.mainmodule.bean.NewSongBaen
 import com.zay.music.module.mainmodule.bean.RecommendSongs
 
 open class FoundViewModel(application: Application) : BaseViewModel<FoundRepository>(application) {
@@ -27,6 +28,10 @@ open class FoundViewModel(application: Application) : BaseViewModel<FoundReposit
         mRespository.djPay(DjPayBeanLivedata)
     }
 
-
+    //推荐新歌
+    var NewSongLiveData: MutableLiveData<NewSongBaen> = MutableLiveData()
+    fun RecommendNewSong(){
+        mRespository.RecommendNewSong(NewSongLiveData)
+    }
 
 }

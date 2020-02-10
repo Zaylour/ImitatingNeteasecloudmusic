@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.zay.music.module.mainmodule.bean.BannerDataBean
@@ -12,18 +13,22 @@ import kotlinx.android.synthetic.main.foundfragment_layout.*
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.zay.music.base.BaseFragmentBinding
 import com.zay.music.databinding.FoundfragmentLayoutBinding
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.zay.music.module.mainmodule.adapter.DjPayAdapter
+import com.zay.music.module.mainmodule.adapter.NewSongAdapter
 import com.zay.music.module.mainmodule.adapter.PersonalizedAdapter
 
 class FoundFragment : BaseFragmentBinding<FoundViewModel>() {
     lateinit var binding: FoundfragmentLayoutBinding
     lateinit var personalizedAdapter:PersonalizedAdapter
     lateinit var djPayAdapter: DjPayAdapter
+    lateinit var newSongAdapter: NewSongAdapter
     val roundedCorners = RoundedCorners(20)
     val options = RequestOptions.bitmapTransform(roundedCorners).dontAnimate()
     override fun onCreateView(
@@ -41,6 +46,7 @@ class FoundFragment : BaseFragmentBinding<FoundViewModel>() {
         binding.foundViewModel = mViewModel
         initBanner()
         initPersonalized()
+        initNewSong()
         initDjPay()
         test.setOnClickListener {
             mViewModel.nameLiveData.value = "ViewModel配合LiveData使用"
@@ -83,6 +89,22 @@ class FoundFragment : BaseFragmentBinding<FoundViewModel>() {
         })
 
     }
+
+    //初始化新歌推荐
+    fun initNewSong(){
+        newSongAdapter= NewSongAdapter()
+        val mLinearLayout = GridLayoutManager(activity, 3, RecyclerView.HORIZONTAL,false)
+        newSongReccyView.layoutManager=mLinearLayout
+        newSongReccyView.adapter=newSongAdapter
+        newSongReccyView.addItemDecoration(NewSongItemDecoration())
+        mViewModel.RecommendNewSong()
+        mViewModel.NewSongLiveData.observe(binding.lifecycleOwner!!, Observer {
+
+
+            newSongAdapter.setNewData(it.result)
+        })
+    }
+
     //初始化电台推荐
     fun initDjPay(){
         djPayAdapter= DjPayAdapter()
