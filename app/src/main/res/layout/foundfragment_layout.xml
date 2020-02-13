@@ -13,18 +13,17 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
-
             <com.stx.xhb.androidx.XBanner
                 android:id="@+id/xbanner"
                 android:layout_width="match_parent"
                 android:layout_height="123dp"
-                android:layout_marginTop="88dp"
                 app:AutoPlayTime="3000"
                 app:clipChildrenLeftRightMargin="20dp"
                 app:clipChildrenTopBottomMargin="0dp"
@@ -385,21 +384,6 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <TextView

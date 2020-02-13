@@ -8,15 +8,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
-    tools:openDrawer="start"
-    >
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-
+    tools:openDrawer="start">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".module.mainmodule.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:elevation="0dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                >
+                <ImageView
+                    android:id="@+id/openDrawer"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="42dp"
+                    android:src="@mipmap/z01"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginRight="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabSelectedTextColor="@color/Black39"
+                    app:tabTextAppearance="@style/TabLayoutTextSize" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/z02"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/mViewPager"
@@ -24,55 +70,67 @@
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </androidx.viewpager.widget.ViewPager>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/White"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/openDrawer"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="42dp"
-                android:src="@mipmap/z01"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="27dp"
-                android:layout_marginRight="60dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tabIndicatorHeight="0dp"
-                app:tabSelectedTextColor="@color/Black39"
-                app:tabTextAppearance="@style/TabLayoutTextSize" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="42dp"
-                android:layout_marginRight="20dp"
-                android:src="@mipmap/z02"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+         />
+<!--       -->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--&lt;!&ndash;        <androidx.constraintlayout.widget.ConstraintLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@color/White"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintLeft_toLeftOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintTop_toTopOf="parent">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/openDrawer"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginTop="42dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@mipmap/z01"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintLeft_toLeftOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <com.google.android.material.tabs.TabLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/tab_layout"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginLeft="60dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginTop="27dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginRight="60dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintLeft_toLeftOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintRight_toRightOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:tabIndicatorHeight="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:tabSelectedTextColor="@color/Black39"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:tabTextAppearance="@style/TabLayoutTextSize" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginTop="42dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@mipmap/z02"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintRight_toRightOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
     <com.google.android.material.navigation.NavigationView
@@ -81,6 +139,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/main_drawerlayout"
+        android:visibility="gone"
         />
 
 

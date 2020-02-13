@@ -24,23 +24,17 @@ import com.zay.music.module.mainmodule.adapter.DjPayAdapter
 import com.zay.music.module.mainmodule.adapter.NewSongAdapter
 import com.zay.music.module.mainmodule.adapter.PersonalizedAdapter
 
-class FoundFragment : BaseFragmentBinding<FoundViewModel>() {
-    lateinit var binding: FoundfragmentLayoutBinding
+class FoundFragment : BaseFragmentBinding<FoundViewModel,FoundfragmentLayoutBinding>() {
+    override val layoutId: Int
+        get() = R.layout.foundfragment_layout
     lateinit var personalizedAdapter:PersonalizedAdapter
     lateinit var djPayAdapter: DjPayAdapter
     lateinit var newSongAdapter: NewSongAdapter
     val roundedCorners = RoundedCorners(20)
     val options = RequestOptions.bitmapTransform(roundedCorners).dontAnimate()
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.foundfragment_layout, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
-    }
+    override fun init() {
 
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.foundViewModel = mViewModel
