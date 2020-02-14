@@ -2,203 +2,226 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data>
-    </data>
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#0D000000"
+            android:background="@color/White"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_header_size"
+            app:layout_constraintTop_toTopOf="parent"
             >
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appbar"
+            <ImageView
+                android:id="@+id/info_bg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#0D000000"
-                >
+                android:layout_height="@dimen/home_header_size"
+                android:background="@drawable/info_bg"
+                android:scaleType="fitXY"
+                android:src="#99000000"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:layout_width="match_parent"
+
+
+            <View
+                android:id="@+id/gray_cover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_header_size"
+                android:background="@android:color/transparent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info_panel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_header_size"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/touImg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="100dp"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                    >
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/tabGrey"
-                        >
-
-                        <ImageView
-                            android:id="@+id/info_bg"
-                            android:layout_width="match_parent"
-                            android:layout_height="220dp"
-                            android:scaleType="fitXY"
-                            android:src="#CC000000"
-                            android:background="@drawable/info_bg"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
-
-
-                        <ImageView
-                            android:id="@+id/touImg"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="100dp"
-                            android:src="@mipmap/ic_launcher"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="zaylour"
-                            app:layout_constraintTop_toTopOf="@+id/touImg"
-                            app:layout_constraintLeft_toRightOf="@+id/touImg"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginLeft="15dp"
-                            />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            app:layout_constraintTop_toBottomOf="@+id/touImg"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            android:layout_marginTop="20dp"
-                            android:weightSum="5"
-                            >
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@mipmap/z10" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="我的消息"
-                                    android:textSize="11dp" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@mipmap/z11" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="我的好友"
-                                    android:textSize="11dp" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@mipmap/z12" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="个人主页"
-                                    android:textSize="11dp" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@mipmap/z13" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="个性装扮"
-                                    android:textSize="11dp" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:src="@mipmap/z13" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="个性装扮"
-                                    android:textSize="11dp" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </com.google.android.material.appbar.CollapsingToolbarLayout>
-
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="zaylour"
+                    android:textColor="@color/White"
+                    app:layout_constraintLeft_toRightOf="@+id/touImg"
+                    app:layout_constraintTop_toTopOf="@+id/touImg" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_alignParentBottom="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
                     android:orientation="horizontal"
-                    android:layout_marginTop="-10dp"
-                    android:background="@drawable/bg_coner_up">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    android:weightSum="5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/touImg">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="我的音乐"
-                        android:layout_marginLeft="30dp"
-                        android:textColor="@color/Black"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/z32" />
+
+                        <TextView
+                            android:id="@+id/b1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="本地音乐"
+                            android:textColor="@color/White"
+                            android:textSize="11dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/z33" />
+
+                        <TextView
+                            android:id="@+id/b2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="下载管理"
+                            android:textColor="@color/White"
+                            android:textSize="11dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/z34" />
+
+                        <TextView
+                            android:id="@+id/b3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的电台"
+                            android:textColor="@color/White"
+                            android:textSize="11dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/z35" />
+
+                        <TextView
+                            android:id="@+id/b4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的收藏"
+                            android:textColor="@color/White"
+                            android:textSize="11dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/z36"
+                            android:scaleType="fitXY"
+                            />
+
+                        <TextView
+                            android:id="@+id/b5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关注新歌"
+                            android:textColor="@color/White"
+                            android:textSize="11dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <com.scwang.smartrefresh.layout.SmartRefreshLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                >
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/reclerview"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
+                    android:layout_height="@dimen/tabstrip_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_coner_up"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
 
-            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:layout_marginLeft="30dp"-->
+<!--                        android:text="我的音乐"-->
+<!--                        android:textColor="@color/Black" />-->
+                </LinearLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </RelativeLayout>
 
+        <View
+            android:id="@+id/actTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>

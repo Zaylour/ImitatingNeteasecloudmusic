@@ -1,4 +1,4 @@
-package com.zay.music.module.mainmodule.found
+package com.zay.music.module.mainmodule.my
 
 import android.graphics.Rect
 import android.view.View
@@ -11,11 +11,11 @@ class SpacesItemDecoration: RecyclerView.ItemDecoration() {
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        outRect.left = 40
+        outRect.left = 20
         if(parent.getChildLayoutPosition(view)==0){
-            outRect.left = 60
+            outRect.left = 30
         }else if (parent.getChildLayoutPosition(view) == parent.adapter!!.itemCount-1) {
-            outRect.right=60
+            outRect.right=30
         }
     }
 

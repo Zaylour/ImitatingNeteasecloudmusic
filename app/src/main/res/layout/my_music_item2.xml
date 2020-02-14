@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="95dp"
+    android:layout_height="140dp"
+    android:background="@drawable/angle_10"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/bg_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <TextView
+        android:id="@+id/nameC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="推荐"
+        android:textSize="11dp"
+        android:textColor="@color/tabGrey"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        />
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="45dp"
+        tools:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img"
+        tools:text="我喜欢的音乐"
+        android:textColor="@color/White"
+        android:textSize="13dp"
+        />
+
+    <TextView
+        android:id="@+id/nameB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        tools:text="心动模式"
+        android:textColor="@color/White"
+        android:textSize="12dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

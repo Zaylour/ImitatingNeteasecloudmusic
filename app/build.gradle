@@ -54,7 +54,8 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'
     //adapter
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+   // implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta11'
     //工具库
     implementation 'com.blankj:utilcode:1.25.9'
     //Glide
