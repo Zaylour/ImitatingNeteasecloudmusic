@@ -1,9 +1,7 @@
 package com.zay.music.data
 
-import com.zay.music.module.mainmodule.bean.BannerDataBean
-import com.zay.music.module.mainmodule.bean.DjPayBean
-import com.zay.music.module.mainmodule.bean.NewSongBaen
-import com.zay.music.module.mainmodule.bean.RecommendSongs
+import com.zay.music.module.loginmodule.LoginBean
+import com.zay.music.module.mainmodule.bean.*
 import io.reactivex.Observable
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -14,7 +12,7 @@ interface Api {
     //手机号密码登录
     @FormUrlEncoded
     @POST("login/cellphone")
-    fun loginCellphone(@Field("phone") phone: String,@Field("password") password: String): Observable<BannerDataBean>
+    fun loginCellphone(@Field("phone") phone: String,@Field("password") password: String): Observable<LoginBean>
 
     //获取首页banner
     @FormUrlEncoded
@@ -35,7 +33,10 @@ interface Api {
     @POST("personalized/newsong")
     fun RecommendNewSong(): Observable<NewSongBaen>
 
-
+    //用户自己的歌单
+    @FormUrlEncoded
+    @POST("user/playlist")
+    fun myPlaylist(@Field("uid") uid: String): Observable<MyPlaylist>
 
 
 }

@@ -1,10 +1,12 @@
-package com.zay.music.module.mainmodule.bean;
+package com.zay.music.module.loginmodule;
 
 import com.zay.music.data.BaseResponse;
 
+import org.litepal.crud.LitePalSupport;
+
 import java.util.List;
 
-public class LoginBean extends BaseResponse {
+public class LoginBean extends LitePalSupport {
 
 
     /**
@@ -14,6 +16,8 @@ public class LoginBean extends BaseResponse {
      * profile : {"avatarImgIdStr":"109951162867466556","backgroundImgIdStr":"109951162867464266","djStatus":0,"mutual":false,"remarkName":null,"expertTags":null,"authStatus":0,"experts":{},"userId":320824761,"vipType":0,"gender":1,"avatarImgId":109951162867466560,"accountStatus":0,"nickname":"Zaylour","birthday":770745600000,"city":440100,"backgroundImgId":109951162867464270,"userType":0,"province":440000,"defaultAvatar":false,"avatarUrl":"https://p3.music.126.net/d0wSYujEkZpbhfG9u4godA==/109951162867466556.jpg","description":"","detailDescription":"","followed":false,"backgroundUrl":"https://p3.music.126.net/4UtwrAOQm2l0KLALP0WZdA==/109951162867464266.jpg","signature":"","authority":0,"avatarImgId_str":"109951162867466556","followeds":4,"follows":33,"eventCount":3,"playlistCount":7,"playlistBeSubscribedCount":0}
      * bindings : [{"expiresIn":2147483647,"bindingTime":1471529439809,"url":"","expired":false,"userId":320824761,"tokenJsonStr":"{\"countrycode\":\"\",\"cellphone\":\"15011985351\",\"hasPassword\":true}","refreshTime":1471529439,"id":2889779160,"type":1},{"expiresIn":7776000,"bindingTime":1490429816716,"url":"","expired":true,"userId":320824761,"tokenJsonStr":"{\"access_token\":\"E06176B6E615CD8F645F0DF4D2783FF9\",\"refresh_token\":\"7C8483C7E5665B32A82DA5F149E4CA74\",\"openid\":\"764B4E4DA2CC6A5777A9447D42BA815F\",\"nickname\":\"Zyzyzy\",\"expires_in\":7776000}","refreshTime":1490429816,"id":2997242572,"type":5}]
      */
+
+    private int code;
 
     private int loginType;
     private AccountBean account;
@@ -79,7 +83,7 @@ public class LoginBean extends BaseResponse {
          * anonimousUser : false
          */
 
-        private int id;
+        private String id;
         private String userName;
         private int type;
         private int status;
@@ -94,11 +98,11 @@ public class LoginBean extends BaseResponse {
         private long viptypeVersion;
         private boolean anonimousUser;
 
-        public int getId() {
+        public String getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(String id) {
             this.id = id;
         }
 
@@ -640,5 +644,28 @@ public class LoginBean extends BaseResponse {
         public void setType(int type) {
             this.type = type;
         }
+    }
+
+
+    public int getCode() {
+        return code;
+    }
+
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+
+    @Override
+    public String toString() {
+        return "LoginBean{" +
+                "code=" + code +
+                ", loginType=" + loginType +
+                ", account=" + account +
+                ", token='" + token + '\'' +
+                ", profile=" + profile +
+                ", bindings=" + bindings +
+                '}';
     }
 }

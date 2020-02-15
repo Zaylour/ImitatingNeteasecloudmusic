@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.orhanobut.logger.BuildConfig
 import com.orhanobut.logger.Logger
 import com.zay.music.base.BaseRepository
+import com.zay.music.module.mainmodule.bean.MyPlaylist
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 class BaseObserver<T : BaseResponse<*>>(
@@ -18,6 +19,8 @@ class BaseObserver<T : BaseResponse<*>>(
         repository.subscribe(d)
     }
     override fun onNext(response: T) {
+
+
         when (response.code) {
             Constant.SUCCESS -> {
 //                if (response.data is List<*>) {
@@ -26,6 +29,7 @@ class BaseObserver<T : BaseResponse<*>>(
 //                        return
 //                    }
 //                }
+
                 loadState.postValue(State(StateType.SUCCESS))
                 liveData.postValue(response)
             }

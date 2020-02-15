@@ -2,56 +2,82 @@ package com.zay.music.module.mainmodule.my
 
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.qmuiteam.qmui.util.QMUIDisplayHelper.getStatusBarHeight
+import com.tencent.mmkv.MMKV
 import com.zay.music.R
 import com.zay.music.base.BaseFragmentBinding
 import com.zay.music.databinding.FoundfragmentLayoutBinding
+import com.zay.music.databinding.MyfragmentLayoutBinding
+import com.zay.music.module.loginmodule.LoginBean
 import com.zay.music.module.mainmodule.adapter.CollectSongAdapter
 import com.zay.music.module.mainmodule.adapter.MyMusicItemAdapter
-import com.zay.music.module.mainmodule.bean.MyBean
-import com.zay.music.module.mainmodule.bean.MyMusicItemBean
-import com.zay.music.module.mainmodule.bean.MyRecentlyItemBean
+import com.zay.music.module.mainmodule.bean.*
 import kotlinx.android.synthetic.main.myfragment_layout.*
+import org.litepal.LitePal
+import org.litepal.extension.findAll
+import java.util.logging.Logger
 
-class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>() {
+class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     var slidingDistance: Int = 0
-    var compatPadingTop = 100
+    var compatPadingTop = 14
     var scrolledY = 0
     var datas= mutableListOf<MyBean>()
     var adapter=CollectSongAdapter()
+    var kv = MMKV.defaultMMKV()
+   // lateinit var  loginData:MutableList<LoginBean>
     override val layoutId: Int
         get() = R.layout.myfragment_layout
 
     override fun init() {
-
+       //  loginData=LitePal.findAll<LoginBean>()
+        compatPadingTop = getStatusBarHeight(activity)//状态栏的高度
+        val headerSize = resources.getDimensionPixelOffset(R.dimen.home_header_size)
+        val navBarHeight = resources.getDimensionPixelOffset(R.dimen.tab_bar_height)
+        val tabStripHeight = resources.getDimensionPixelOffset(R.dimen.tabstrip_height)
+        //初始化滑动参数,k值
+        slidingDistance = headerSize - navBarHeight - compatPadingTop - tabStripHeight-resources.getDimensionPixelOffset(R.dimen.space)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter.data.clear()
-        initSlidingParams()
+        initLoginInfo()
         initRecyclerView()
         initMusicItem()
         initRecently()
+       initMyCreateSongSheet()
     }
-    /**
-     * 初始化滑动参数,k值
-     */
-    private fun initSlidingParams() {
-        compatPadingTop = getStatusBarHeight(activity)//状态栏的高度
-        val headerSize = resources.getDimensionPixelOffset(R.dimen.home_header_size)
-        val navBarHeight = resources.getDimensionPixelOffset(R.dimen.tab_bar_height)
-        val tabStripHeight = resources.getDimensionPixelOffset(R.dimen.tabstrip_height)
-        slidingDistance = headerSize - navBarHeight - compatPadingTop - tabStripHeight
+    //登录信息，比如头像和姓名
+    fun initLoginInfo(){
+        name.text=kv.decodeString("nickname")
+        Glide.with(activity!!).load(kv.decodeString("avatarUrl")).into(touImg)
+        Glide.with(activity!!).load(kv.decodeString("backgroundUrl")).into(info_bg)
+//        Glide.with(activity!!)
+//            .asDrawable()
+//            .load(kv.decodeString("backgroundUrl"))
+//            .into(object : SimpleTarget<Drawable>(){
+//                override fun onResourceReady(
+//                    resource: Drawable,
+//                    transition: Transition<in Drawable>?
+//                ) {
+//                    info_bg.background=resource
+//
+//                }
+//            })
     }
-
-
+    //初始化RecyclerViwe
     fun initRecyclerView(){
         //给recylcer列表增加info_panel 一样高的headview
         val header = View(context)
@@ -74,7 +100,8 @@ class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>(
     }
     //根据页面滑动距离改变Header方法
     fun scrollChangeHeader(scrolledY_new:Int){
-        // Log.e(TAG, "scrollChangeHeader: scrolledY="+scrolledY );
+        // compatPadingTop==14
+         Log.e("scroll", "scrollChangeHeader: scrolledY="+scrolledY);
         //scrolledY 是随着listview下滑而增大，列表上滑回到一开始， scrolledeY是0
         var scrolledY=0
         if (scrolledY_new < 0) {
@@ -83,16 +110,17 @@ class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>(
             scrolledY = scrolledY_new
         }
 
-        if (scrolledY < slidingDistance) {
+        if (scrolledY <= slidingDistance) {
             //head view
             var deep = scrolledY * 230 / slidingDistance
+            Log.e("scroll", "scrollChangeHeader: scrolledY="+scrolledY+"  deep="+deep);
             llHeader.setPadding(0, -scrolledY, 0, 0)
-            if (deep < 60) deep = 60
-            if (deep > 255) deep = 255
-            gray_cover.setBackgroundColor(Color.argb(deep, 0x22, 0x22, 0x22))
+            if (deep <100) deep = 100
+            if (deep >= 255) deep = 230
+            gray_cover.background.alpha=deep
             //indo content
             var y = 255 - scrolledY * 320 / slidingDistance
-            if (y < 30) y = 30
+            if (y < 10) y = 0
             if (y > 255) y = 255
 //            img1.setBackgroundColor(Color.argb(y, 0xff, 0x00, 0x00))
             touImg.setImageAlpha(y)
@@ -111,7 +139,8 @@ class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>(
         } else {//列表滑动到很下面，数值非常大（actionbar处于最小状态）
             //head view
             llHeader.setPadding(0, -slidingDistance, 0, 0)
-            gray_cover.setBackgroundColor(Color.argb(230, 0x22, 0x22, 0x22))
+            //gray_cover.setBackgroundColor(Color.argb(230, 0x22, 0x22, 0x22))
+            gray_cover.background.alpha=230
             touImg.setImageAlpha(0)
             img1.setImageAlpha(0)
             img2.setImageAlpha(0)
@@ -130,6 +159,7 @@ class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>(
     }
 
     fun initMusicItem(){
+
         val music_item= mutableListOf<MyMusicItemBean>()
         music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"我喜欢的音乐","心动模式",""))
         music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"私人FM","来这里找好歌",""))
@@ -148,15 +178,18 @@ class MyFragment : BaseFragmentBinding<MyViewModel, FoundfragmentLayoutBinding>(
         mybean.type=2
         mybean.data=data
         datas.add(mybean)
-        adapter.setNewData(datas)
     }
 
     fun initMyCreateSongSheet(){
-
-
+        mViewModel.getMyPlayList()
+        mViewModel.playListLiveData.observe(binding.lifecycleOwner!!, Observer {
+            val mybean=MyBean()
+            mybean.type=3
+            mybean.data=it
+            datas.add(mybean)
+            adapter.setNewData(datas)
+            Log.e("zyzyzy","000")
+        })
 
     }
-
-
-
 }

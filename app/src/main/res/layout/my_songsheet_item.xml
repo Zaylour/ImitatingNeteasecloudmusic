@@ -69,7 +69,10 @@
         android:id="@+id/tabA_RacyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ll_tag" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_tag"
+        android:layout_marginTop="20dp"
+        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tabB_RacyclerView"
@@ -77,6 +80,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ll_tag"
         android:visibility="gone"
+        android:layout_marginTop="20dp"
         />
 
 

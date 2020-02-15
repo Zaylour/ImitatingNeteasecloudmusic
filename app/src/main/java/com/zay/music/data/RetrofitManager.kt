@@ -27,7 +27,8 @@ class RetrofitManager {
             .writeTimeout(20, TimeUnit.SECONDS)
         val logging = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
             //这里打印的是网络请求过程的信息
-            Logger.t("apiData").e(it.toString())
+           // Logger.t("apiData").e(it.toString())
+            Log.e("apiData",it.toString())
         })
         logging.level = HttpLoggingInterceptor.Level.BODY
         builder.addInterceptor(logging)

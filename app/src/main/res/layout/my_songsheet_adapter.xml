@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <ImageView
         android:id="@+id/img"
@@ -22,9 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:maxWidth="80dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="日语"
+        tools:text="日语"
         app:layout_constraintLeft_toRightOf="@+id/img"
         app:layout_constraintTop_toTopOf="@+id/img" />
 

@@ -36,7 +36,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/img"
+                android:id="@+id/imgA"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -62,8 +62,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="全部已播歌曲"
-                app:layout_constraintLeft_toRightOf="@+id/img"
-                app:layout_constraintTop_toTopOf="@+id/img" />
+                app:layout_constraintLeft_toRightOf="@+id/imgA"
+                app:layout_constraintTop_toTopOf="@+id/imgA" />
 
 
             <TextView
@@ -74,7 +74,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/tabGrey"
                 android:textSize="12dp"
-                app:layout_constraintLeft_toRightOf="@+id/img"
+                app:layout_constraintLeft_toRightOf="@+id/imgA"
                 app:layout_constraintTop_toBottomOf="@+id/nameA"
                 tools:text="3首" />
 
@@ -86,7 +86,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/img2"
+                android:id="@+id/imgB"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
@@ -113,9 +113,9 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="某个电台或歌单"
-                app:layout_constraintLeft_toRightOf="@+id/img2"
+                app:layout_constraintLeft_toRightOf="@+id/imgB"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/img2" />
+                app:layout_constraintTop_toTopOf="@+id/imgB" />
 
 
             <TextView
@@ -126,7 +126,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/tabGrey"
                 android:textSize="12dp"
-                app:layout_constraintLeft_toRightOf="@+id/img2"
+                app:layout_constraintLeft_toRightOf="@+id/imgB"
                 app:layout_constraintTop_toBottomOf="@+id/nameB"
                 tools:text="继续播放" />
 

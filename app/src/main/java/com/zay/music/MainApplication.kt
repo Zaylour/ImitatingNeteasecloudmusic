@@ -7,6 +7,7 @@ import com.tencent.mmkv.MMKV
 import com.zay.music.data.RetrofitManager
 import me.jessyan.autosize.AutoSizeConfig
 import me.jessyan.autosize.unit.Subunits
+import org.litepal.LitePal
 
 class MainApplication :Application() {
     companion object{
@@ -28,6 +29,8 @@ class MainApplication :Application() {
             .setSupportDP(false)
             .setSupportSP(false)
             .setSupportSubunits(Subunits.MM);
+        //数据库
+        LitePal.initialize(this);
     }
 
 }
