@@ -21,12 +21,13 @@
         android:id="@+id/nameA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:maxWidth="80dp"
         android:ellipsize="end"
         android:maxLines="1"
         tools:text="日语"
+        android:textSize="13dp"
         app:layout_constraintLeft_toRightOf="@+id/img"
         app:layout_constraintTop_toTopOf="@+id/img" />
 
@@ -34,7 +35,7 @@
         android:id="@+id/num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:textColor="@color/tabGrey"
         android:textSize="12dp"

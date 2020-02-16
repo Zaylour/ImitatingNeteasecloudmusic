@@ -48,6 +48,7 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
         val tabStripHeight = resources.getDimensionPixelOffset(R.dimen.tabstrip_height)
         //初始化滑动参数,k值
         slidingDistance = headerSize - navBarHeight - compatPadingTop - tabStripHeight-resources.getDimensionPixelOffset(R.dimen.space)
+        mViewModel.getMyPlayList()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,18 +65,6 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
         name.text=kv.decodeString("nickname")
         Glide.with(activity!!).load(kv.decodeString("avatarUrl")).into(touImg)
         Glide.with(activity!!).load(kv.decodeString("backgroundUrl")).into(info_bg)
-//        Glide.with(activity!!)
-//            .asDrawable()
-//            .load(kv.decodeString("backgroundUrl"))
-//            .into(object : SimpleTarget<Drawable>(){
-//                override fun onResourceReady(
-//                    resource: Drawable,
-//                    transition: Transition<in Drawable>?
-//                ) {
-//                    info_bg.background=resource
-//
-//                }
-//            })
     }
     //初始化RecyclerViwe
     fun initRecyclerView(){
@@ -181,7 +170,7 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     }
 
     fun initMyCreateSongSheet(){
-        mViewModel.getMyPlayList()
+
         mViewModel.playListLiveData.observe(binding.lifecycleOwner!!, Observer {
             val mybean=MyBean()
             mybean.type=3

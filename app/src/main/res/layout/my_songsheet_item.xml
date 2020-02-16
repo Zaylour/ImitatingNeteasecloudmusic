@@ -71,6 +71,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ll_tag"
         android:layout_marginTop="20dp"
+
         />
 
 

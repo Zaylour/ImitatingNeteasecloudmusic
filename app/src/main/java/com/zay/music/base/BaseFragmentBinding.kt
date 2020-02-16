@@ -28,6 +28,7 @@ abstract class BaseFragmentBinding<T : BaseViewModel<*>,X: androidx.databinding.
     ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         binding.lifecycleOwner=this
+        mViewModel = ViewModelProvider(this).get(Util.getClass<T>(this))
         init()
         return binding.root
     }
@@ -35,7 +36,7 @@ abstract class BaseFragmentBinding<T : BaseViewModel<*>,X: androidx.databinding.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mViewModel = ViewModelProvider(this).get(Util.getClass<T>(this))
+
 
        // mViewModel.loadState.observe(this,observer)
     }

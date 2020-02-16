@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //设置ViewPager预加载的View数目
-        //mViewPager.setOffscreenPageLimit(1)
+        mViewPager.setOffscreenPageLimit(4)
         //默认
         tab_layout.getTabAt(1)!!.select()
     }
