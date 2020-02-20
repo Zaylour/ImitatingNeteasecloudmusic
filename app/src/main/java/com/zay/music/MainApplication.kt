@@ -3,6 +3,7 @@ package com.zay.music
 import android.app.Application
 import android.content.Context
 import com.didichuxing.doraemonkit.DoraemonKit
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.tencent.mmkv.MMKV
 import com.zay.music.data.RetrofitManager
 import me.jessyan.autosize.AutoSizeConfig
@@ -31,6 +32,8 @@ class MainApplication :Application() {
             .setSupportSubunits(Subunits.MM);
         //数据库
         LitePal.initialize(this);
+        //Fresco初始化
+        Fresco.initialize(this);
     }
 
 }

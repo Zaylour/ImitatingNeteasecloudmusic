@@ -59,8 +59,8 @@ dependencies {
     //工具库
     implementation 'com.blankj:utilcode:1.25.9'
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     //doraemonkit-滴滴开源性能库
     debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.0.1'
     releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.1'
@@ -70,12 +70,20 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //QMUI腾讯ui
     implementation 'com.qmuiteam:qmui:2.0.0-alpha02'
-    //
+    implementation 'com.qmuiteam:arch:2.0.0-alpha02'
+    //拖拽视图
     implementation 'com.billy.android:smart-swipe:1.1.2'
     implementation 'com.billy.android:smart-swipe-x:1.1.0'
     //LitePal
     implementation 'org.litepal.android:kotlin:3.0.0'
-
+    //fresco
+    implementation 'com.facebook.fresco:fresco:0.12.0'
+    implementation 'com.facebook.fresco:animated-gif:0.12.0'
+    implementation 'com.facebook.fresco:animated-webp:0.12.0'
+    implementation 'com.facebook.fresco:webpsupport:0.12.0'
+    implementation 'com.facebook.fresco:webpsupport:0.12.0'
+    //TabLayout
+    implementation 'com.github.angcyo:DslTabLayout:1.4.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"

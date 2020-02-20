@@ -36,6 +36,8 @@ class MyPagerAdapter(fm:FragmentManager,nNumOfTabs:Int )  : FragmentPagerAdapter
         }
     }
 
+
+
     override fun getCount(): Int {
         return nNumOfTabs
     }

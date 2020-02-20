@@ -9,13 +9,19 @@ import com.zay.music.R
 import com.zay.music.module.mainmodule.bean.RecommendSongs
 import com.zay.music.util.Util
 
+import com.facebook.drawee.view.SimpleDraweeView
+
+import android.net.Uri
+import com.facebook.drawee.drawable.ProgressBarDrawable
+
+
 class PersonalizedAdapter() : BaseQuickAdapter<RecommendSongs.ResultBean, BaseViewHolder>(R.layout.personalized_item)  {
 
 
-    val roundedCorners = RoundedCorners(20)
-    var  options = RequestOptions.bitmapTransform(roundedCorners).dontAnimate()
+
     override fun convert(helper: BaseViewHolder, item: RecommendSongs.ResultBean?) {
-        Glide.with(context).setDefaultRequestOptions(options).load(item!!.picUrl).into(helper.getView(R.id.img))
+        val draweeView = helper.getView<SimpleDraweeView>(R.id.img) as SimpleDraweeView
+        draweeView.setImageURI(item!!.picUrl)
         helper.setText(R.id.num, Util.formatNum(item.playCount.toString(),false))
         helper.setText(R.id.name,item.name)
     }

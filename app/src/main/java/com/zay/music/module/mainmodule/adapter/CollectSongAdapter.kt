@@ -48,7 +48,6 @@ class CollectSongAdapter : BaseDelegateMultiAdapter<MyBean, BaseViewHolder>() {
                 myMusicReccyView.addItemDecoration(SpacesItemDecoration())
                 myMusicReccyView.adapter = adapter
                 myMusicReccyView.addItemDecoration(SpacesItemDecoration())
-
                 adapter.setNewData(item!!.data as MutableList<MyMusicItemBean>)
             }
             2->{

@@ -42,7 +42,7 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
 
     override fun init() {
        //  loginData=LitePal.findAll<LoginBean>()
-        compatPadingTop = getStatusBarHeight(activity)//状态栏的高度
+        compatPadingTop = getStatusBarHeight(activity!!)//状态栏的高度
         val headerSize = resources.getDimensionPixelOffset(R.dimen.home_header_size)
         val navBarHeight = resources.getDimensionPixelOffset(R.dimen.tab_bar_height)
         val tabStripHeight = resources.getDimensionPixelOffset(R.dimen.tabstrip_height)
@@ -63,8 +63,11 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     //登录信息，比如头像和姓名
     fun initLoginInfo(){
         name.text=kv.decodeString("nickname")
-        Glide.with(activity!!).load(kv.decodeString("avatarUrl")).into(touImg)
-        Glide.with(activity!!).load(kv.decodeString("backgroundUrl")).into(info_bg)
+//        Glide.with(activity!!).load(kv.decodeString("avatarUrl")).into(touImg)
+//        Glide.with(activity!!).load(kv.decodeString("backgroundUrl")).into(info_bg)
+
+        touImg.setImageURI(kv.decodeString("avatarUrl"))
+        info_bg.setImageURI(kv.decodeString("backgroundUrl"))
     }
     //初始化RecyclerViwe
     fun initRecyclerView(){

@@ -60,6 +60,7 @@ class FoundFragment : BaseFragmentBinding<FoundViewModel,FoundfragmentLayoutBind
                 .setDefaultRequestOptions(options)
                 .load((model as BannerDataBean.BannersBean).getXBannerUrl())
                 .into(view as ImageView)
+
         })
         xbanner.setOnItemClickListener({ banner, model, view, position ->
             Toast.makeText(

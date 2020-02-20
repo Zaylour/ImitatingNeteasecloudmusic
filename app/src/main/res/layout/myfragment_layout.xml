@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             >
 
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/info_bg"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/home_header_size"
@@ -55,7 +55,7 @@
 <!--                    app:layout_constraintTop_toTopOf="parent"-->
 <!--                    app:civ_border_overlay="true"-->
 <!--                    />-->
-                <ImageView
+                <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/touImg"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -63,7 +63,12 @@
                     android:layout_marginTop="100dp"
                     android:src="@mipmap/ic_launcher"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:roundedCornerRadius="25dp"
+                    app:progressBarImage="@drawable/loading"
+                    app:progressBarImageScaleType="centerInside"
+                    app:progressBarAutoRotateInterval="2000"
+                    />
 
                 <TextView
                     android:id="@+id/name"

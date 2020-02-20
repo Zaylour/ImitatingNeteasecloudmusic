@@ -38,5 +38,7 @@ interface Api {
     @POST("user/playlist")
     fun myPlaylist(@Field("uid") uid: String): Observable<MyPlaylist>
 
-
+    //视频标签集合
+    @POST("video/group/list")
+    fun videoTagList(): Observable<VidedoTagBean>
 }
