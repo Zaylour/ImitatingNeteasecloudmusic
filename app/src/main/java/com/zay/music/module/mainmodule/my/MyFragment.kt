@@ -36,12 +36,10 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     var datas= mutableListOf<MyBean>()
     var adapter=CollectSongAdapter()
     var kv = MMKV.defaultMMKV()
-   // lateinit var  loginData:MutableList<LoginBean>
     override val layoutId: Int
         get() = R.layout.myfragment_layout
 
     override fun init() {
-       //  loginData=LitePal.findAll<LoginBean>()
         compatPadingTop = getStatusBarHeight(activity!!)//状态栏的高度
         val headerSize = resources.getDimensionPixelOffset(R.dimen.home_header_size)
         val navBarHeight = resources.getDimensionPixelOffset(R.dimen.tab_bar_height)
@@ -63,9 +61,6 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     //登录信息，比如头像和姓名
     fun initLoginInfo(){
         name.text=kv.decodeString("nickname")
-//        Glide.with(activity!!).load(kv.decodeString("avatarUrl")).into(touImg)
-//        Glide.with(activity!!).load(kv.decodeString("backgroundUrl")).into(info_bg)
-
         touImg.setImageURI(kv.decodeString("avatarUrl"))
         info_bg.setImageURI(kv.decodeString("backgroundUrl"))
     }
@@ -92,8 +87,6 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     }
     //根据页面滑动距离改变Header方法
     fun scrollChangeHeader(scrolledY_new:Int){
-        // compatPadingTop==14
-         Log.e("scroll", "scrollChangeHeader: scrolledY="+scrolledY);
         //scrolledY 是随着listview下滑而增大，列表上滑回到一开始， scrolledeY是0
         var scrolledY=0
         if (scrolledY_new < 0) {
@@ -105,7 +98,6 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
         if (scrolledY <= slidingDistance) {
             //head view
             var deep = scrolledY * 230 / slidingDistance
-            Log.e("scroll", "scrollChangeHeader: scrolledY="+scrolledY+"  deep="+deep);
             llHeader.setPadding(0, -scrolledY, 0, 0)
             if (deep <100) deep = 100
             if (deep >= 255) deep = 230
@@ -114,7 +106,6 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
             var y = 255 - scrolledY * 320 / slidingDistance
             if (y < 10) y = 0
             if (y > 255) y = 255
-//            img1.setBackgroundColor(Color.argb(y, 0xff, 0x00, 0x00))
             touImg.setImageAlpha(y)
             img1.setImageAlpha(y)
             img2.setImageAlpha(y)
@@ -129,9 +120,7 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
             b5.setTextColor(Color.argb(y, 0xff, 0xff, 0xff))
 
         } else {//列表滑动到很下面，数值非常大（actionbar处于最小状态）
-            //head view
             llHeader.setPadding(0, -slidingDistance, 0, 0)
-            //gray_cover.setBackgroundColor(Color.argb(230, 0x22, 0x22, 0x22))
             gray_cover.background.alpha=230
             touImg.setImageAlpha(0)
             img1.setImageAlpha(0)
@@ -145,13 +134,10 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
             b3.setTextColor(Color.argb(0, 0xff, 0xff, 0xff))
             b4.setTextColor(Color.argb(0, 0xff, 0xff, 0xff))
             b5.setTextColor(Color.argb(0, 0xff, 0xff, 0xff))
-
-
         }
     }
 
     fun initMusicItem(){
-
         val music_item= mutableListOf<MyMusicItemBean>()
         music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"我喜欢的音乐","心动模式",""))
         music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"私人FM","来这里找好歌",""))
@@ -173,14 +159,12 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     }
 
     fun initMyCreateSongSheet(){
-
         mViewModel.playListLiveData.observe(binding.lifecycleOwner!!, Observer {
             val mybean=MyBean()
             mybean.type=3
             mybean.data=it
             datas.add(mybean)
             adapter.setNewData(datas)
-            Log.e("zyzyzy","000")
         })
 
     }

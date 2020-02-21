@@ -11,10 +11,8 @@ import com.zay.music.util.Util
 open class BaseViewModel<T : BaseRepository>(application: Application) : AndroidViewModel(application){
     val loadState by lazy { MutableLiveData<State>()}
     val mRespository : T by lazy {
-
         (Util.getClass<T>(this)).getDeclaredConstructor(MutableLiveData::class.java)
             .newInstance(loadState)
-
     }
     override fun onCleared() {
         super.onCleared()

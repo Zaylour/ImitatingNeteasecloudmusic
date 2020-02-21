@@ -47,7 +47,8 @@
             android:fitsSystemWindows="true"
             app:layout_constraintTop_toBottomOf="@+id/tabs"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

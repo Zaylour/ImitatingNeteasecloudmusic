@@ -16,7 +16,6 @@
         fresco:progressBarImage="@drawable/loading"
         fresco:progressBarImageScaleType="center"
         fresco:progressBarAutoRotateInterval="2000"
-
         />
 
     <TextView

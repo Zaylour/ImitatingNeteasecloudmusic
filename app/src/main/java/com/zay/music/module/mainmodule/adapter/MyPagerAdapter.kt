@@ -7,6 +7,7 @@ import com.zay.music.module.mainmodule.found.FoundFragment
 import com.zay.music.module.mainmodule.found.FoundViewModel
 import com.zay.music.module.mainmodule.my.MyFragment
 import com.zay.music.module.mainmodule.video.VideoFragment
+import com.zay.music.module.mainmodule.video.subFragment.RecommendMvFragment
 import com.zay.music.module.mainmodule.yuncun.YunCunFragment
 
 class MyPagerAdapter(fm:FragmentManager,nNumOfTabs:Int )  : FragmentPagerAdapter(fm,nNumOfTabs) {
@@ -35,9 +36,6 @@ class MyPagerAdapter(fm:FragmentManager,nNumOfTabs:Int )  : FragmentPagerAdapter
             }
         }
     }
-
-
-
     override fun getCount(): Int {
         return nNumOfTabs
     }

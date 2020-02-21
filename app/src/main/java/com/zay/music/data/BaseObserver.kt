@@ -29,7 +29,6 @@ class BaseObserver<T : BaseResponse<*>>(
 //                        return
 //                    }
 //                }
-
                 loadState.postValue(State(StateType.SUCCESS))
                 liveData.postValue(response)
             }
@@ -40,7 +39,7 @@ class BaseObserver<T : BaseResponse<*>>(
     }
     override fun onError(e: Throwable) {
         if (BuildConfig.DEBUG) {
-            e.message?.let { Logger.t(TAG).e(it) }
+            e.message?.let { Log.e(TAG,it) }
         }
         loadState.postValue(State(StateType.ERROR))
     }

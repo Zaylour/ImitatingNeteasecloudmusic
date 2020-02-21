@@ -1,54 +1,53 @@
 package com.zay.music.module.mainmodule.adapter
 
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.qmuiteam.qmui.arch.QMUIFragment
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter
-import com.zay.music.module.mainmodule.found.FoundFragment
-import com.zay.music.module.mainmodule.found.FoundViewModel
-import com.zay.music.module.mainmodule.my.MyFragment
-import com.zay.music.module.mainmodule.video.RecommendMvFragment
-import com.zay.music.module.mainmodule.video.VideoFragment
-import com.zay.music.module.mainmodule.yuncun.YunCunFragment
+import com.zay.music.module.mainmodule.bean.VidedoTagBean
+import com.zay.music.module.mainmodule.video.subFragment.RecommendMvFragment
 
-class VideoPagerAdapter(fm:FragmentManager, nNumOfTabs:Int )  : QMUIFragmentPagerAdapter(fm) {
-    //fragment的数量
-    var nNumOfTabs: Int = 0
+class VideoPagerAdapter(fm:FragmentManager,behavior:Int , datas:  MutableList<VidedoTagBean.DataBean> )  : FragmentStatePagerAdapter(fm,behavior) {
+
+
+    var datas= mutableListOf<VidedoTagBean.DataBean>()
     init {
-        this.nNumOfTabs=nNumOfTabs
+        this.datas.addAll(datas)
     }
     override fun getItemPosition(`object`: Any): Int {
-
         return super.getItemPosition(`object`)
     }
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view === `object`
+//    override fun createFragment(position: Int): QMUIFragment {
+//      //  Log.e("ceshiid",  datas.get(position).id.toString())
+////        when (position) {
+////            0 -> return RecommendMvFragment(0)
+////            1 -> return RecommendMvFragment(1)
+////            2 -> return RecommendMvFragment(2)
+////            3 -> return RecommendMvFragment(3)
+////            else -> return RecommendMvFragment(4)
+////        }
+//
+//        return   RecommendMvFragment(
+//            datas.get(
+//                position
+//            ).id
+//        )
+//    }
+
+    override fun getItem(position: Int): Fragment {
+        return   RecommendMvFragment(
+            datas.get(
+                position
+            ).id
+        )
     }
 
-    override fun createFragment(position: Int): QMUIFragment {
-        when (position) {
-            0 -> return RecommendMvFragment()
-            1 -> return RecommendMvFragment()
-            2 -> return RecommendMvFragment()
-            3 -> return RecommendMvFragment()
-            else -> return RecommendMvFragment()
-        }
-    }
-
-    override  fun getPageTitle(position: Int): CharSequence {
-        when (position) {
-            0 -> return "推荐"
-            1 -> return "武汉加油"
-            2 -> return "想见你"
-            3 -> return "现场"
-            else -> return "推荐"
-        }
-    }
     override fun getCount(): Int {
-        return nNumOfTabs
+        return datas.size
     }
 
 

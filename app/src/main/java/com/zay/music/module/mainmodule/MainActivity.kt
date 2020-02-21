@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         mViewPager.setAdapter(adapter);
         //为ViewPager添加页面改变监听
         mViewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
-
         val view0 = tab_layout.getTabAt(0)!!.customView
         val view1 = tab_layout.getTabAt(1)!!.customView
         val view2 = tab_layout.getTabAt(2)!!.customView

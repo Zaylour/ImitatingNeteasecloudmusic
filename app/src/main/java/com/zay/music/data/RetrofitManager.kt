@@ -25,6 +25,7 @@ class RetrofitManager {
         val builder = OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(20, TimeUnit.SECONDS)
+
         val logging = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
             //这里打印的是网络请求过程的信息
            // Logger.t("apiData").e(it.toString())
