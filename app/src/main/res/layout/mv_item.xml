@@ -31,16 +31,41 @@
             app:progressBarImageScaleType="center"
             app:roundedCornerRadius="10dp"
             android:background="@color/White"
+            android:visibility="gone"
             />
 
+
+
+            <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+                android:id="@+id/detail_player"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/radius_10"
+                />
+
+
+
+
+
+
+
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="108dp"
+            android:id="@+id/playBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="102dp"
             android:src="@mipmap/z37"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/video_title"
@@ -54,7 +79,7 @@
             android:maxLines="2"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/video_img"
+            app:layout_constraintTop_toBottomOf="@+id/detail_player"
             tools:text="温荣少年在线弹唱" />
 
         <View
@@ -62,6 +87,10 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="#E1E1E1"
             app:layout_constraintTop_toBottomOf="@+id/video_title" />
 
@@ -90,6 +119,29 @@
             app:layout_constraintTop_toBottomOf="@+id/line"
             app:layout_constraintLeft_toRightOf="@+id/touxiang"
             />
+
+
+
+        <ImageView
+            android:id="@+id/pinglun"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/z39"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="60dp"
+            />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/z38"
+            app:layout_constraintRight_toLeftOf="@+id/pinglun"
+            app:layout_constraintTop_toTopOf="@+id/pinglun"
+            android:layout_marginRight="20dp"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,15 +1,12 @@
 package com.zay.music.module.mainmodule.found
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.zay.music.base.BaseViewModel
-import com.zay.music.data.BaseResponse
-import com.zay.music.module.mainmodule.bean.BannerDataBean
-import com.zay.music.module.mainmodule.bean.DjPayBean
-import com.zay.music.module.mainmodule.bean.NewSongBaen
-import com.zay.music.module.mainmodule.bean.RecommendSongs
+import com.zay.music.module.bean.BannerDataBean
+import com.zay.music.module.bean.DjPayBean
+import com.zay.music.module.bean.NewSongBaen
+import com.zay.music.module.bean.RecommendSongs
 
 open class FoundViewModel(application: Application) : BaseViewModel<FoundRepository>(application) {
     var nameLiveData = MutableLiveData<String>();

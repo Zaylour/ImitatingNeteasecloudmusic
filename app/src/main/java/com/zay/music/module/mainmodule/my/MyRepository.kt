@@ -1,11 +1,9 @@
 package com.zay.music.module.mainmodule.my
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.tencent.mmkv.MMKV
 import com.zay.music.data.*
-import com.zay.music.module.mainmodule.bean.BannerDataBean
-import com.zay.music.module.mainmodule.bean.MyPlaylist
+import com.zay.music.module.bean.MyPlaylist
 
 class MyRepository(val loadState: MutableLiveData<State>) : ApiRepository() {
     var kv = MMKV.defaultMMKV()

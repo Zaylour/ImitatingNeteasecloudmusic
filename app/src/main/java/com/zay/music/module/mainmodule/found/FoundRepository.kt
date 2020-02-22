@@ -2,10 +2,10 @@ package com.zay.music.module.mainmodule.found
 
 import androidx.lifecycle.MutableLiveData
 import com.zay.music.data.*
-import com.zay.music.module.mainmodule.bean.BannerDataBean
-import com.zay.music.module.mainmodule.bean.DjPayBean
-import com.zay.music.module.mainmodule.bean.NewSongBaen
-import com.zay.music.module.mainmodule.bean.RecommendSongs
+import com.zay.music.module.bean.BannerDataBean
+import com.zay.music.module.bean.DjPayBean
+import com.zay.music.module.bean.NewSongBaen
+import com.zay.music.module.bean.RecommendSongs
 
 open class FoundRepository(val loadState: MutableLiveData<State>) : ApiRepository() {
 

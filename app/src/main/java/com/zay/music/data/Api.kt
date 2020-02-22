@@ -1,7 +1,7 @@
 package com.zay.music.data
 
 import com.zay.music.module.loginmodule.LoginBean
-import com.zay.music.module.mainmodule.bean.*
+import com.zay.music.module.bean.*
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -43,9 +43,21 @@ interface Api {
     //获取标签下的视频集合
     @FormUrlEncoded
     @POST("video/group")
-    @Headers("Cache-Control:no-cache","Cookie:__remember_me=true; MUSIC_U=8907d9c36a20e0a0f29f5057a869acadc5823538602a28893e58249a6c58b356865dcd073c99191eb118e32d612bfb9441049cea1c6bb9b6; __csrf=ea1aa90baf42bf214397b7d60b2a5222")
-    fun getVideoList(@Field("id") id: Int): Observable<MvBean>
+    @Headers(
+        "withCredentials: true",
+        "Cache-Control:no-cache",
+        "Cookie:__remember_me=true; MUSIC_U=8907d9c36a20e0a0f29f5057a869acadc5823538602a28893e58249a6c58b356865dcd073c99191eb118e32d612bfb9441049cea1c6bb9b6; __csrf=ea1aa90baf42bf214397b7d60b2a5222")
+    fun getVideoList(@Field("id") id: Int,@Field("timestamp") time: String): Observable<MvBean>
 
+    //热门歌单分类标签
+    @POST("playlist/catlist")
+    fun getHotSongSheetTag(): Observable<SongSheetTagBean>
+
+    //歌单分类下的内容
+    @FormUrlEncoded
+    @POST("top/playlist")
+    fun getTopPlaylist(@Field("limit") limit: Int,@Field("tag") tag: String,@Field("timestamp") timestamp: String)
+            : Observable<SheetBean>
 
 
 

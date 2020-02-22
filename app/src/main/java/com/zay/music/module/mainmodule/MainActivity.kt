@@ -3,20 +3,15 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Gravity
 import com.zay.music.R
 import kotlinx.android.synthetic.main.activity_main.*
-import com.zay.music.module.mainmodule.adapter.MyPagerAdapter
+import com.zay.music.module.adapter.MyPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import android.widget.TextView
 import android.view.View
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
-import kotlinx.android.synthetic.main.main_drawerlayout.*
-import com.billy.android.swipe.consumer.StretchConsumer
-import com.billy.android.swipe.SmartSwipe
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             tab_layout.addTab(tab)
         }
         //自定义的Adapter继承自FragmentPagerAdapter
-        val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.getTabCount())
+        val adapter = MyPagerAdapter(supportFragmentManager,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         //ViewPager设置Adapter
         mViewPager.setAdapter(adapter);
         //为ViewPager添加页面改变监听
@@ -61,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         //为TabLayout添加Tab选择监听
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                mViewPager.setCurrentItem(tab.getPosition());
+                mViewPager.setCurrentItem(tab.getPosition(),true);
                 val view = tab.getCustomView();
                 if (null == view) {
                     tab.setCustomView(R.layout.layout_tab);
@@ -115,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         //设置ViewPager预加载的View数目
-        mViewPager.setOffscreenPageLimit(4)
+        mViewPager.setOffscreenPageLimit(2)
         //默认
         tab_layout.getTabAt(1)!!.select()
     }

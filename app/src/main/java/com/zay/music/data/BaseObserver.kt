@@ -2,9 +2,7 @@ package com.zay.music.data
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.orhanobut.logger.BuildConfig
-import com.orhanobut.logger.Logger
 import com.zay.music.base.BaseRepository
-import com.zay.music.module.mainmodule.bean.MyPlaylist
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 class BaseObserver<T : BaseResponse<*>>(

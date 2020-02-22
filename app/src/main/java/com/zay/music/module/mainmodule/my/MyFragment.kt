@@ -2,32 +2,21 @@ package com.zay.music.module.mainmodule.my
 
 
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.SimpleTarget
-import com.bumptech.glide.request.transition.Transition
 import com.qmuiteam.qmui.util.QMUIDisplayHelper.getStatusBarHeight
 import com.tencent.mmkv.MMKV
 import com.zay.music.R
 import com.zay.music.base.BaseFragmentBinding
-import com.zay.music.databinding.FoundfragmentLayoutBinding
 import com.zay.music.databinding.MyfragmentLayoutBinding
-import com.zay.music.module.loginmodule.LoginBean
-import com.zay.music.module.mainmodule.adapter.CollectSongAdapter
-import com.zay.music.module.mainmodule.adapter.MyMusicItemAdapter
-import com.zay.music.module.mainmodule.bean.*
+import com.zay.music.module.adapter.CollectSongAdapter
+import com.zay.music.module.bean.*
 import kotlinx.android.synthetic.main.myfragment_layout.*
-import org.litepal.LitePal
-import org.litepal.extension.findAll
-import java.util.logging.Logger
 
 class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     var slidingDistance: Int = 0
