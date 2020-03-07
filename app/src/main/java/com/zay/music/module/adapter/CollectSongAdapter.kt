@@ -31,7 +31,7 @@ class CollectSongAdapter : BaseDelegateMultiAdapter<MyBean, BaseViewHolder>() {
             .addItemType(3, R.layout.my_songsheet_item)
     }
 
-    override fun convert(helper: BaseViewHolder, item: MyBean?) {
+    override fun convert(helper: BaseViewHolder, item: MyBean) {
         // 1:我的音乐布局  2.最近播放  3.创建歌单，收藏歌单
         when (helper.itemViewType) {
             1 -> {
@@ -43,11 +43,11 @@ class CollectSongAdapter : BaseDelegateMultiAdapter<MyBean, BaseViewHolder>() {
                 myMusicReccyView.addItemDecoration(SpacesItemDecoration())
                 myMusicReccyView.adapter = adapter
                 myMusicReccyView.addItemDecoration(SpacesItemDecoration())
-                adapter.setNewData(item!!.data as MutableList<MyMusicItemBean>)
+                adapter.setNewData(item.data as MutableList<MyMusicItemBean>)
             }
             2->{
 
-                val myRecentlyItemBean = item!!.data as MyRecentlyItemBean
+                val myRecentlyItemBean = item.data as MyRecentlyItemBean
                 helper.setText(R.id.num,myRecentlyItemBean.num+"首")
                 helper.setText(R.id.nameB,myRecentlyItemBean.nameB)
                 helper.setText(R.id.nameC,myRecentlyItemBean.nameC)
@@ -59,7 +59,7 @@ class CollectSongAdapter : BaseDelegateMultiAdapter<MyBean, BaseViewHolder>() {
                 val mLinearLayout = GridLayoutManager(context, 2, RecyclerView.VERTICAL,false)
                 val mLinearLayout2 = GridLayoutManager(context, 2, RecyclerView.VERTICAL,false)
                 val songSheetA= mutableListOf<MyPlaylist.PlaylistBean>()
-                val playlist = item!!.data as MyPlaylist
+                val playlist = item.data as MyPlaylist
                 val playlistData = playlist.playlist
                 val iterator = playlistData.iterator()
                 while(iterator.hasNext()){

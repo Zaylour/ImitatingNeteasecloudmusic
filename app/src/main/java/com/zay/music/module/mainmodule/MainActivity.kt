@@ -20,10 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(com.zay.music.R.layout.activity_main)
         QMUIStatusBarHelper.translucent(this)
         QMUIStatusBarHelper.setStatusBarLightMode(this)
-        //https://qibilly.com/SmartSwipe-tutorial/
-//        SmartSwipe.wrap(this)
-//            .addConsumer(StretchConsumer())
-//            .enableVertical()
         initTabItem()
         initOpenDrawer()
     }

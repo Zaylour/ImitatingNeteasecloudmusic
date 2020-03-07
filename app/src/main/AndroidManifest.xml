@@ -50,6 +50,11 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             />
+        <activity android:name=".module.songsheetmodule.songsheetdetail.SongSheetDetail"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            />
     </application>
 
 </manifest>

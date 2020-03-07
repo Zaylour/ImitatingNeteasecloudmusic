@@ -69,8 +69,7 @@ class RecommendMvFragment() :
                     val position = GSYVideoManager.instance().playPosition
 
                     if (GSYVideoManager.instance().getPlayTag().equals(mvAdapter.data.get(position).data.urlInfo.id)
-                        && (position < dx || position > lastVisibleItem)
-                    ) {
+                        && (position < dx || position > lastVisibleItem)) {
                         if (GSYVideoManager.isFullState(activity)) {
                             return;
                         }
@@ -79,14 +78,8 @@ class RecommendMvFragment() :
                         mvAdapter.notifyDataSetChanged();
                     }
                 }
-
-
             }
-
-
         })
-
-
     }
 
 

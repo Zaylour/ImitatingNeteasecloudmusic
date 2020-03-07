@@ -12,8 +12,8 @@ import com.zay.music.module.bean.MyMusicItemBean
 class MyMusicItemAdapter : BaseQuickAdapter<MyMusicItemBean, BaseViewHolder>(R.layout.my_music_item2){
     val roundedCorners = RoundedCorners(20)
     var  options = RequestOptions.bitmapTransform(roundedCorners).dontAnimate()
-    override fun convert(helper: BaseViewHolder, item: MyMusicItemBean?) {
-        Glide.with(context).setDefaultRequestOptions(options).load(item!!.imgUrl).into(helper.getView(R.id.img))
+    override fun convert(helper: BaseViewHolder, item: MyMusicItemBean) {
+        Glide.with(context).setDefaultRequestOptions(options).load(item.imgUrl).into(helper.getView(R.id.img))
 
         //helper.getView<SimpleDraweeView>(R.id.img).setImageURI(item!!.imgUrl)
 

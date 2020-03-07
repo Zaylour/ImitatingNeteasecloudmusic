@@ -10,8 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import com.zay.music.R
 import com.zay.music.util.Util
 
 abstract class BaseFragmentBinding<T : BaseViewModel<*>,X: ViewDataBinding> : Fragment() {

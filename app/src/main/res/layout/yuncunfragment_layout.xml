@@ -3,13 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/White"
     >
 
-    <ImageView
-        android:id="@+id/btn"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/testtv"
+        android:layout_width="200dp"
         android:layout_height="100dp"
         android:gravity="center"
+        android:text="测试阴影"
         />
+
+
 
 </LinearLayout>

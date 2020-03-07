@@ -14,7 +14,7 @@ class MvAdapter : BaseQuickAdapter<MvBean.DatasBean, BaseViewHolder>(R.layout.mv
 
 
 
-    override fun convert(helper: BaseViewHolder, item: MvBean.DatasBean?) {
+    override fun convert(helper: BaseViewHolder, item: MvBean.DatasBean) {
         setAnimationWithDefault(AnimationType.AlphaIn)
         addChildClickViewIds(R.id.playBtn)
        // val simpleDraweeView = helper.getView<SimpleDraweeView>(R.id.video_img)
@@ -23,7 +23,7 @@ class MvAdapter : BaseQuickAdapter<MvBean.DatasBean, BaseViewHolder>(R.layout.mv
 
         val view=SimpleDraweeView(context)
         view.scaleType=ImageView.ScaleType.CENTER_CROP
-        view.setImageURI(item!!.data.coverUrl)
+        view.setImageURI(item.data.coverUrl)
         gsyVideoPlayer.thumbImageView=view
 
         gsyVideoPlayer.setUp(item.data.urlInfo.url,true,null,null,item.data.title)

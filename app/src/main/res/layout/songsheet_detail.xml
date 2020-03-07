@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/mAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:background="@color/White"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/sheetImg"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="100dp"
+                        android:scaleType="fitXY"
+                        tools:src="@mipmap/q02"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:progressBarAutoRotateInterval="2000"
+                        app:progressBarImage="@drawable/loading"
+                        app:progressBarImageScaleType="center"
+                        app:roundedCornerRadius="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="听喜欢的歌，做自己的宇宙做自己的宇宙"
+                        android:textSize="18sp"
+                        android:textColor="@color/White"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@+id/sheetImg"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/sheetImg"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/myImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:roundAsCircle="true"
+                        app:layout_constraintTop_toBottomOf="@+id/name"
+                        app:layout_constraintLeft_toRightOf="@+id/sheetImg"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/creator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="情思天鹅   >"
+                        app:layout_constraintLeft_toRightOf="@+id/myImg"
+                        app:layout_constraintTop_toTopOf="@+id/myImg"
+                        android:textColor="@color/White"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/describeInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="你不快乐是因为你没有好好爱自己，并且常常因为别人消耗自己，你总是积极的带着讨好的心去对待他人，但却不被买单且常被人误解为错都在你。不是你不够好，而是你没必要如此上心，没有真正的快乐，只有放松的自己。 ​​​——第七颗失眠星球\n\n这个世界已经够为难你了，就不要再为难自己了，更不要让不爱你的人给你添堵了，好好爱自己。"
+                        app:layout_constraintLeft_toRightOf="@+id/sheetImg"
+                        app:layout_constraintTop_toBottomOf="@+id/myImg"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:textColor="@color/White"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="20dp"
+                        android:textSize="11sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    app:layout_collapseMode="pin"
+                    >
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/back"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/q03"
+                            android:scaleType="fitXY"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/titlename"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="日语单曲循环中毒系列"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintLeft_toLeftOf="@+id/back"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/while_radius">
+                <ImageView
+                    android:id="@+id/bofang"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/q04"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_bofang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="播放全部"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toRightOf="@+id/bofang"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:includeFontPadding="false"
+                    />
+
+                <TextView
+                    android:id="@+id/num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="(共99首)"
+                    android:textSize="11sp"
+                    android:textColor="#CCCCCC"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_bofang"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/red_radius20">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/q05"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/sc_num"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_goneMarginLeft="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/sc_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="收藏(15860)"
+                        android:textColor="#FFFFFF"
+                        />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

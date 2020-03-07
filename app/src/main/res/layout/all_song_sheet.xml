@@ -16,19 +16,17 @@
             android:layout_height="200dp"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="gone"
-
             />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@+id/mLitePager"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

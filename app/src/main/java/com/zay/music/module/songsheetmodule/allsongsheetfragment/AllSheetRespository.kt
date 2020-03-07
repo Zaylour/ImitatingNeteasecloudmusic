@@ -8,7 +8,7 @@ import com.zay.music.module.bean.VidedoTagBean
 class AllSheetRespository (val loadState: MutableLiveData<State>) : ApiRepository() {
 
     fun getTopPlaylist(liveData: MutableLiveData<SheetBean>,tag:String) {
-        RetrofitManager.instance.api.getTopPlaylist(24,tag,System.currentTimeMillis().toString()).execute(
+        RetrofitManager.instance.api.getTopPlaylist(24,tag,System.currentTimeMillis()).execute(
             BaseObserver(liveData, loadState, this)
         )
     }

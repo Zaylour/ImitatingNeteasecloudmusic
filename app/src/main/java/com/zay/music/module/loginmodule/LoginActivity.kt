@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
     var resLogin: Disposable?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val contentView = DataBindingUtil.setContentView<ActivityLoginBinding>(
+         DataBindingUtil.setContentView<ActivityLoginBinding>(
             this@LoginActivity,
             R.layout.activity_login
         )

@@ -14,7 +14,7 @@
         fresco:layout_constraintLeft_toLeftOf="parent"
         fresco:roundedCornerRadius="10dp"
         fresco:progressBarImage="@drawable/loading"
-        fresco:progressBarImageScaleType="center"
+        fresco:progressBarImageScaleType="fitXY"
         fresco:progressBarAutoRotateInterval="2000"
         />
 
@@ -46,12 +46,14 @@
         android:layout_height="wrap_content"
         fresco:layout_constraintTop_toBottomOf="@+id/img"
         fresco:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         tools:text="英伦情调|深海中的温柔孤岛"
         android:lineSpacingExtra="1dp"
         android:textSize="12dp"
         android:maxLines="2"
         android:ellipsize="end"
+        fresco:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
         />
 
 

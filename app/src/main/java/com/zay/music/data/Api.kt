@@ -2,6 +2,7 @@ package com.zay.music.data
 
 import com.zay.music.module.loginmodule.LoginBean
 import com.zay.music.module.bean.*
+import com.zay.music.module.songsheetmodule.songsheetdetail.SongSheetDeatilBean
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -54,11 +55,13 @@ interface Api {
     fun getHotSongSheetTag(): Observable<SongSheetTagBean>
 
     //歌单分类下的内容
-    @FormUrlEncoded
-    @POST("top/playlist")
-    fun getTopPlaylist(@Field("limit") limit: Int,@Field("tag") tag: String,@Field("timestamp") timestamp: String)
+    @GET("top/playlist")
+    fun getTopPlaylist(@Query("limit") limit: Int, @Query("tag") tag: String, @Query("timestamp") timestamp: Long)
             : Observable<SheetBean>
 
-
+    //歌单的详情
+    @FormUrlEncoded
+    @POST("playlist/detail")
+    fun getSongSheetDetail(@Field("id") id: String): Observable<SongSheetDeatilBean>
 
 }

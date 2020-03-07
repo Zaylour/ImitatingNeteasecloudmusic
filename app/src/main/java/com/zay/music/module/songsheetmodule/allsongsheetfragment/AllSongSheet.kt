@@ -19,9 +19,9 @@ import com.zay.music.module.adapter.PersonalizedAdapter
 import com.zay.music.module.adapter.SheetAdapter
 import com.zay.music.module.mainmodule.video.subFragment.RecommendMvFragment
 import kotlinx.android.synthetic.main.all_song_sheet.*
-
-
-
+import com.chad.library.adapter.base.BaseQuickAdapter
+import androidx.annotation.NonNull
+import com.chad.library.adapter.base.listener.OnItemClickListener
 
 
 class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBinding>() {
@@ -66,7 +66,7 @@ class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBindin
                     val layoutView = View.inflate(activity, R.layout.one_sheet_top, null)
                     val simpleDraweeView = layoutView.findViewById<SimpleDraweeView>(R.id.img)
                     simpleDraweeView.setImageURI(it.coverImgUrl)
-                    val title = layoutView.findViewById<TextView>(R.id.title)
+                    val title = layoutView.findViewById<TextView>(com.zay.music.R.id.title)
                     title.text=it.name
                     mLitePager.addViews(layoutView)
                 }
@@ -79,7 +79,15 @@ class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBindin
             }else{
                 mLitePager.visibility=View.GONE
                 sheetAdapter!!.setNewData(it.playlists)
+//                sheetAdapter!!. setOnItemClickListener { adapter, view, position ->
+//
+//
+//
+//                }
             }
         })
+
+
+
     }
 }
