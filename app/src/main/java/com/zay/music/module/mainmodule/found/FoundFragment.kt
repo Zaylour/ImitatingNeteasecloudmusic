@@ -91,7 +91,6 @@ class FoundFragment : BaseFragmentBinding<FoundViewModel,FoundfragmentLayoutBind
         })
 
     }
-
     //初始化新歌推荐
     fun initNewSong(){
         newSongAdapter= NewSongAdapter()
@@ -104,7 +103,6 @@ class FoundFragment : BaseFragmentBinding<FoundViewModel,FoundfragmentLayoutBind
             newSongAdapter.setNewData(it.result.subList(0,6))
         })
     }
-
     //初始化电台推荐
     fun initDjPay(){
         djPayAdapter= DjPayAdapter()

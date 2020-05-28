@@ -19,21 +19,25 @@ class MainApplication :Application() {
         super.onCreate()
         appContext=this
         appApplication=this
-        //mmkv初始化
-        MMKV.initialize(this)
-        //网络接口初始化
-        RetrofitManager.instance.init()
-        //性能检测
-        //DoraemonKit.install(this)
-        //屏幕适配
-        AutoSizeConfig.getInstance().getUnitsManager()
-            .setSupportDP(false)
-            .setSupportSP(false)
-            .setSupportSubunits(Subunits.MM);
-        //数据库
-        LitePal.initialize(this);
-        //Fresco初始化
-        Fresco.initialize(this);
+        DispatcherExecutor.getCPUExecutor().execute({
+            //mmkv初始化
+            MMKV.initialize(this)
+            //网络接口初始化
+            RetrofitManager.instance.init()
+            //性能检测
+            DoraemonKit.install(this)
+            //屏幕适配
+            AutoSizeConfig.getInstance().getUnitsManager()
+                .setSupportDP(false)
+                .setSupportSP(false)
+                .setSupportSubunits(Subunits.MM);
+            //数据库
+            LitePal.initialize(this);
+            //Fresco初始化
+            Fresco.initialize(this);
+        })
+
+
     }
 
 }

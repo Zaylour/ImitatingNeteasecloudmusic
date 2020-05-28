@@ -19,4 +19,5 @@ class DetailAdapter : BaseQuickAdapter<SongSheetDeatilBean.PlaylistBean.TracksBe
         }
 
     }
+
 }
