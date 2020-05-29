@@ -1,17 +1,17 @@
 package com.zay.music.data
-
 import com.zay.music.module.loginmodule.LoginBean
 import com.zay.music.module.bean.*
 import com.zay.music.module.songsheetmodule.songsheetdetail.SongSheetDeatilBean
 import io.reactivex.Observable
 import retrofit2.http.*
-
-
 interface Api {
     //手机号密码登录
     @FormUrlEncoded
     @POST("login/cellphone")
-    fun loginCellphone(@Field("phone") phone: String,@Field("password") password: String): Observable<LoginBean>
+    fun loginCellphone(
+        @Field("phone") phone: String,
+        @Field("password") password: String
+    ): Observable<LoginBean>
 
     //获取首页banner
     @FormUrlEncoded
@@ -42,26 +42,30 @@ interface Api {
     fun videoTagList(): Observable<VidedoTagBean>
 
     //获取标签下的视频集合
-    @FormUrlEncoded
-    @POST("video/group")
+   // @FormUrlEncoded
+    @GET("video/group")
     @Headers(
         "withCredentials: true",
         "Cache-Control:no-cache",
-        "Cookie:__remember_me=true; MUSIC_U=8907d9c36a20e0a0f29f5057a869acadc5823538602a28893e58249a6c58b356865dcd073c99191eb118e32d612bfb9441049cea1c6bb9b6; __csrf=ea1aa90baf42bf214397b7d60b2a5222")
-    fun getVideoList(@Field("id") id: Int,@Field("timestamp") time: String): Observable<MvBean>
+        "Cookie:__remember_me=true; MUSIC_U=8907d9c36a20e0a0f29f5057a869acadc5823538602a28893e58249a6c58b356865dcd073c99191eb118e32d612bfb9441049cea1c6bb9b6; __csrf=ea1aa90baf42bf214397b7d60b2a5222"
+    )
+    fun getVideoList(@Query("id") id: Int, @Query("timestamp") time: String): Observable<MvBean>
+
 
     //热门歌单分类标签
-    @POST("playlist/catlist")
+    @GET("playlist/catlist")
     fun getHotSongSheetTag(): Observable<SongSheetTagBean>
 
     //歌单分类下的内容
     @GET("top/playlist")
-    fun getTopPlaylist(@Query("limit") limit: Int, @Query("tag") tag: String, @Query("timestamp") timestamp: Long)
-            : Observable<SheetBean>
+    fun getTopPlaylist(
+        @Query("limit") limit: Int,
+        @Query("tag") tag: String,
+        @Query("timestamp") timestamp: String
+    ): Observable<SheetBean>
 
     //歌单的详情
-    @FormUrlEncoded
-    @POST("playlist/detail")
-    fun getSongSheetDetail(@Field("id") id: String): Observable<SongSheetDeatilBean>
+    @GET("playlist/detail")
+    fun getSongSheetDetail(@Query("id") id: String, @Query("timestamp") time: String): Observable<SongSheetDeatilBean>
 
 }

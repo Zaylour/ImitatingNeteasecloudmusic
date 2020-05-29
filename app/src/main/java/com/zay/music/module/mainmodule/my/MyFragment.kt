@@ -1,8 +1,7 @@
 package com.zay.music.module.mainmodule.my
-
-
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -15,8 +14,12 @@ import com.zay.music.R
 import com.zay.music.base.BaseFragmentBinding
 import com.zay.music.databinding.MyfragmentLayoutBinding
 import com.zay.music.module.adapter.CollectSongAdapter
-import com.zay.music.module.bean.*
+import com.zay.music.module.bean.MyBean
+import com.zay.music.module.bean.MyMusicItemBean
+import com.zay.music.module.bean.MyRecentlyItemBean
 import kotlinx.android.synthetic.main.myfragment_layout.*
+import org.greenrobot.eventbus.EventBus
+
 
 class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
     var slidingDistance: Int = 0
@@ -47,6 +50,9 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
         initRecently()
        initMyCreateSongSheet()
     }
+
+
+
     //登录信息，比如头像和姓名
     fun initLoginInfo(){
         name.text=kv.decodeString("nickname")
@@ -128,11 +134,11 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
 
     fun initMusicItem(){
         val music_item= mutableListOf<MyMusicItemBean>()
-        music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"我喜欢的音乐","心动模式",""))
-        music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"私人FM","来这里找好歌",""))
-        music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"ACG专区","","最近使用"))
-        music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"爵士电台","最in爵士乐","推荐"))
-        music_item.add(MyMusicItemBean(R.mipmap.ic_launcher,"云村正能量","聆听经典","推荐"))
+        music_item.add(MyMusicItemBean(R.mipmap.z42,"我喜欢的音乐","心动模式",""))
+        music_item.add(MyMusicItemBean(R.mipmap.z43,"私人FM","来这里找好歌",""))
+        music_item.add(MyMusicItemBean(R.mipmap.z44,"ACG专区","","最近使用"))
+        music_item.add(MyMusicItemBean(R.mipmap.z45,"爵士电台","最in爵士乐","推荐"))
+        music_item.add(MyMusicItemBean(R.mipmap.z46,"云村正能量","聆听经典","推荐"))
         val mybean=MyBean()
         mybean.type=1
         mybean.data=music_item
@@ -152,9 +158,11 @@ class MyFragment : BaseFragmentBinding<MyViewModel, MyfragmentLayoutBinding>() {
             val mybean=MyBean()
             mybean.type=3
             mybean.data=it
+            Log.d("playListLiveData",it.toString())
             datas.add(mybean)
             adapter.setNewData(datas)
         })
-
     }
+
+
 }

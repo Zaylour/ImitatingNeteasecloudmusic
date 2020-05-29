@@ -30,8 +30,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-
-
 class SongSheetDetail : AppCompatActivity(){
     lateinit var mViewModel: SongSheetDetailModel
     var mAdapter: DetailAdapter?=null
@@ -69,34 +67,21 @@ class SongSheetDetail : AppCompatActivity(){
             num.text="(共"+it.playlist.trackCount+"首)"
             //收藏了几首
             sc_num.text="收藏("+it.playlist.subscribedCount+")"
-
             Glide.with(this).load(it.playlist.coverImgUrl).into(object :CustomTarget<Drawable>(){
-                override fun onLoadCleared(placeholder: Drawable?) {
-
-                }
-
+                override fun onLoadCleared(placeholder: Drawable?) {}
                 override fun onResourceReady(
                     resource: Drawable,
                     transition: Transition<in Drawable>?
                 ) {
-                    val bitmap = blur(resource.toBitmap(),25f)
+                    val bitmap = blur(resource.toBitmap())
                     mAppBarLayout.background= BitmapDrawable(bitmap)
                 }
-
             })
-
-
-
-            mAdapter!!.setNewData(it.playlist.tracks)
+            mAdapter?.setNewData(it.playlist.tracks)
         })
-
-
-
-
-
     }
 
-    private fun blur(bitmap: Bitmap, radius: Float): Bitmap {
+    private fun blur(bitmap: Bitmap, radius: Float=25f): Bitmap {
         val output = Bitmap.createBitmap(bitmap) // 创建输出图片
         val rs = RenderScript.create(this) // 构建一个RenderScript对象
         val gaussianBlue = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs)) // 创建高斯模糊脚本
@@ -109,6 +94,4 @@ class SongSheetDetail : AppCompatActivity(){
         rs.destroy() // 关闭RenderScript对象，API>=23则使用rs.releaseAllContexts()
         return output
     }
-
-
 }

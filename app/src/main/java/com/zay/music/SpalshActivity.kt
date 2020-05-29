@@ -12,12 +12,8 @@ class SpalshActivity: AppCompatActivity() {
     var kv = MMKV.defaultMMKV()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //判断是否有登录
          isLogin()
-
-
-
     }
 
     //判断是否有登录

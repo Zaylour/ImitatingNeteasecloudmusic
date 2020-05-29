@@ -19,9 +19,9 @@ class MainApplication :Application() {
         super.onCreate()
         appContext=this
         appApplication=this
+        //mmkv初始化
+        MMKV.initialize(this)
         DispatcherExecutor.getCPUExecutor().execute({
-            //mmkv初始化
-            MMKV.initialize(this)
             //网络接口初始化
             RetrofitManager.instance.init()
             //性能检测

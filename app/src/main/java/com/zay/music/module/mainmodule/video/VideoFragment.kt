@@ -1,5 +1,4 @@
 package com.zay.music.module.mainmodule.video
-
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
@@ -68,6 +67,7 @@ class VideoFragment: BaseFragmentBinding<VideoViewModel, VideofragmentLayoutBind
         super.onDestroyView()
         isLoaded = false
     }
+
 }
 
 

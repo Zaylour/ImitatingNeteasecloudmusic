@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="95dp"
     android:layout_height="140dp"
-    android:background="@drawable/angle_10"
     android:orientation="vertical"
+    android:background="@drawable/angle_10"
     >
 
     <ImageView
@@ -14,8 +14,17 @@
         android:layout_height="140dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/angle_10"
         />
-
+    <ImageView
+        android:layout_width="95dp"
+        android:layout_height="140dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/angle_10_2"
+        />
 <!--    <com.facebook.drawee.view.SimpleDraweeView-->
 <!--        android:id="@+id/bg_img"-->
 <!--        android:layout_width="95dp"-->

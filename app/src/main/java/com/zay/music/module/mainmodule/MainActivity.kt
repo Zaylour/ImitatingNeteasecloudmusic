@@ -1,5 +1,6 @@
 package com.zay.music.module.mainmodule
 import android.graphics.Typeface
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
@@ -17,7 +18,7 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.zay.music.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         QMUIStatusBarHelper.translucent(this)
         QMUIStatusBarHelper.setStatusBarLightMode(this)
         initTabItem()
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
     //初始化tabItem
     fun initTabItem(){
-        val tabList= mutableListOf<String>("我的","发现","云村","视频")
+        val tabList= mutableListOf("我的","发现","云村","视频")
         for (x in 0..3) {
             val tab = tab_layout.newTab()
             val inflate = View.inflate(this, R.layout.layout_tab, null)
@@ -113,9 +114,7 @@ class MainActivity : AppCompatActivity() {
 
     fun initOpenDrawer(){
         openDrawer.setOnClickListener {
-           if( drawerLayout.isDrawerOpen(GravityCompat.START)){
-
-           }else{
+           if(!drawerLayout.isDrawerOpen(GravityCompat.START)){
                drawerLayout.openDrawer(GravityCompat.START)
            }
         }

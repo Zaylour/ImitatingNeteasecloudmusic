@@ -75,16 +75,16 @@ class CollectSongAdapter : BaseDelegateMultiAdapter<MyBean, BaseViewHolder>() {
                 recycViewA.adapter=tabAdapter
                 recycViewA.addItemDecoration(SongItemDecoration())
                 tabAdapter.setNewData(songSheetA)
+                helper.setText(R.id.titleA_num,songSheetA.size.toString())
 
                 val tabBdapter=SongSheetAdapterB()
                 recycViewB.layoutManager=mLinearLayout2
                 recycViewB.adapter=tabBdapter
                 recycViewB.addItemDecoration(SongItemDecoration())
                 tabBdapter.setNewData(playlistData)
+                helper.setText(R.id.titleB_num,playlistData.size.toString())
 
                 helper.getView<TextView>(R.id.titleA).setOnClickListener {
-
-
                     helper.setGone(R.id.tabA_RacyclerView,false)
                     helper.setGone(R.id.tabB_RacyclerView,true)
                     helper.getView<TextView>(R.id.titleA).setTextColor(Color.parseColor("#333333"))
