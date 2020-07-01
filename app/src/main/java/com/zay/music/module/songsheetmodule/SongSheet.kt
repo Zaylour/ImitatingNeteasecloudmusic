@@ -2,7 +2,6 @@ package com.zay.music.module.songsheetmodule
 
 import android.graphics.Typeface
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -12,12 +11,8 @@ import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.qmuiteam.qmui.widget.tab.QMUITabIndicator
 import com.zay.music.R
-import com.zay.music.base.BaseActivityBinding
 import com.zay.music.databinding.SongsheetBinding
-import com.zay.music.databinding.VideofragmentLayoutBinding
 import com.zay.music.module.adapter.SongSheetPagerAdapter
-import com.zay.music.util.ToastMessage
-import com.zay.music.util.Util
 import kotlinx.android.synthetic.main.songsheet.*
 import kotlinx.android.synthetic.main.toolbar.*
 

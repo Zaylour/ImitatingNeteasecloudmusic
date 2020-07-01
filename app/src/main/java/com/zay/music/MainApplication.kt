@@ -25,7 +25,7 @@ class MainApplication :Application() {
             //网络接口初始化
             RetrofitManager.instance.init()
             //性能检测
-            DoraemonKit.install(this)
+            DoraemonKit.install(this,"04a779172b593752cbfacb81480dcd1e")
             //屏幕适配
             AutoSizeConfig.getInstance().getUnitsManager()
                 .setSupportDP(false)

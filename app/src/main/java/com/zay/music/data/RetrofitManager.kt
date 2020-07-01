@@ -36,7 +36,7 @@ class RetrofitManager {
         val okHttpClient = builder.build()
         //配置retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://www.gzfubin.com:3000/") //基本的url
+            .baseUrl("http://www.gzfubin.com:4000/") //基本的url
             .addConverterFactory(GsonConverterFactory.create()) //使用gson
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//使用rxjava
             .client(okHttpClient)

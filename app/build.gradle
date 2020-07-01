@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.didiglobal.booster'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -63,8 +64,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'jp.wasabeef:glide-transformations:4.0.1' //高斯模糊api
     //doraemonkit-滴滴开源性能库
-    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.0.5'
-    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.0.5'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.1.8'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.1.8'
     //屏幕适配
     implementation 'me.jessyan:autosize:1.2.0'
     //圆形图片

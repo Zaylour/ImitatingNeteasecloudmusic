@@ -6,16 +6,14 @@ import android.text.TextUtils
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.blankj.utilcode.util.PhoneUtils
 import com.blankj.utilcode.util.RegexUtils
-import com.blankj.utilcode.util.StringUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.tencent.mmkv.MMKV
 import com.zay.music.module.mainmodule.MainActivity
 import com.zay.music.R
 import com.zay.music.data.RetrofitManager
 import com.zay.music.databinding.ActivityLoginBinding
-import com.zay.music.util.ToastMessage
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
@@ -34,17 +32,16 @@ class LoginActivity : AppCompatActivity() {
         QMUIStatusBarHelper.translucent(this)
         toLogin.setOnClickListener {
             if(TextUtils.isEmpty(phone.text.toString())){
-                ToastMessage.show("请输入电话号码")
+                ToastUtils.showShort("请输入电话号码")
                 return@setOnClickListener
             }else{
                 if(!RegexUtils.isMobileSimple(phone.text.toString())){
-                    ToastMessage.show("请输入正确的电话号码")
+                    ToastUtils.showShort("请输入正确的电话号码")
                     return@setOnClickListener
                 }
             }
-
             if(TextUtils.isEmpty(password.text.toString())){
-                ToastMessage.show("请输入密码")
+                ToastUtils.showShort("请输入密码")
             }
 
             login()
@@ -69,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     }else{
                         kv.encode("islogin",false)
-                        ToastMessage.show("服务器繁忙,请稍后再试");
+                        ToastUtils.showShort("服务器繁忙,请稍后再试");
                     }
                 }
             }, object : Consumer<Throwable> {
@@ -77,10 +74,9 @@ class LoginActivity : AppCompatActivity() {
                     kv.encode("islogin",false)
                     if (throwable is Exception) {
                         Log.e("xception", "网络错误!" + throwable.message);
-                        ToastMessage.show("服务器繁忙,请稍后再试");
+                        ToastUtils.showShort("服务器繁忙,请稍后再试");
                     }
                 }
             })
-
     }
 }
