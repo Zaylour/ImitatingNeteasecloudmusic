@@ -51,7 +51,7 @@ class VideoFragment: BaseFragmentBinding<VideoViewModel, VideofragmentLayoutBind
                 tabs.addTab(tabBuilder.setText(it.data.get(i).name).build(activity))
             }
             tabs.notifyDataChanged();
-            val space = QMUIDisplayHelper.dp2px(context!!, 16)
+            val space = QMUIDisplayHelper.dp2px(context!!, 14)
             tabs.setIndicator(
                 QMUITabIndicator(
                     QMUIDisplayHelper.dp2px(context!!, 2), false, true

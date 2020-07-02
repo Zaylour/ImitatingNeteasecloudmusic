@@ -60,7 +60,7 @@ interface Api {
     @GET("top/playlist")
     fun getTopPlaylist(
         @Query("limit") limit: Int,
-        @Query("tag") tag: String,
+        @Query("cat") tag: String,
         @Query("timestamp") timestamp: String
     ): Observable<SheetBean>
 

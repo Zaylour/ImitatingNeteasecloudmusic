@@ -53,20 +53,28 @@ class LoginActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Consumer<LoginBean> {
                 override fun accept(data: LoginBean?) {
-                    if(data!!.code==200){
-                        kv.encode("userId",data.account.id.toString())
-                        kv.encode("token",data.token)
-                        kv.encode("nickname",data.profile.nickname)
-                        kv.encode("avatarUrl",data.profile.avatarUrl)
-                        kv.encode("backgroundUrl",data.profile.backgroundUrl)
-                        data.save()
-                        val intent= Intent(this@LoginActivity,MainActivity::class.java)
-                        startActivity(intent)
-                        kv.encode("islogin",true)
-                        finish()
-                    }else{
-                        kv.encode("islogin",false)
-                        ToastUtils.showShort("服务器繁忙,请稍后再试");
+
+                    when(data!!.code){
+                        200->{
+                            kv.encode("userId",data.account.id.toString())
+                            kv.encode("token",data.token)
+                            kv.encode("nickname",data.profile.nickname)
+                            kv.encode("avatarUrl",data.profile.avatarUrl)
+                            kv.encode("backgroundUrl",data.profile.backgroundUrl)
+                            data.save()
+                            val intent= Intent(this@LoginActivity,MainActivity::class.java)
+                            startActivity(intent)
+                            kv.encode("islogin",true)
+                            finish()
+                        }
+                        502->{
+                            kv.encode("islogin",false)
+                            ToastUtils.showShort("密码错误");
+                        }
+                        else->{
+                            kv.encode("islogin",false)
+                            ToastUtils.showShort("服务器繁忙,请稍后再试");
+                        }
                     }
                 }
             }, object : Consumer<Throwable> {

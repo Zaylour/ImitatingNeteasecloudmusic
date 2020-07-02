@@ -1,6 +1,7 @@
 package com.zay.music.module.songsheetmodule.allsongsheetfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
@@ -30,11 +31,11 @@ class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBindin
     var tabName = ""
     var position = 0
     var sheetAdapter:SheetAdapter?=null
+    private var isLoaded = false
     constructor(position:Int,tabName: String) : this() {
         this.position = position
         this.tabName = tabName
     }
-
     companion object {
         fun instance(position:Int,tabName: String): AllSongSheet {
             return AllSongSheet(position,tabName)
@@ -45,15 +46,20 @@ class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBindin
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onResume() {
+        super.onResume()
+        if (!isLoaded) {
+            initRecyclerView()
+            isLoaded = true
 
-        initRecyclerView()
-
+        }
     }
 
     fun initRecyclerView() {
-        sheetAdapter = SheetAdapter()
-        sheetAdapter!!.data.clear()
+        if(sheetAdapter==null){
+            sheetAdapter = SheetAdapter()
+        }
+        sheetAdapter?.data?.clear()
         val mLinearLayout = GridLayoutManager(activity, 3, RecyclerView.VERTICAL,false)
         mRecyclerView.setLayoutManager(mLinearLayout)
         mRecyclerView.adapter=sheetAdapter
@@ -79,15 +85,13 @@ class AllSongSheet() : BaseFragmentBinding<AllSheetViewModel, AllSongSheetBindin
             }else{
                 mLitePager.visibility=View.GONE
                 sheetAdapter!!.setNewData(it.playlists)
-//                sheetAdapter!!. setOnItemClickListener { adapter, view, position ->
-//
-//
-//
-//                }
             }
         })
+    }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        isLoaded = false
 
     }
 }

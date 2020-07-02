@@ -3,11 +3,11 @@
 >
 <!-- android:interpolator = "@[package:]anim/interpolator_resource"-->
 
-    <alpha
-        android:fromAlpha="float"
-        android:toAlpha="float"
+<!--    <alpha-->
+<!--        android:fromAlpha="float"-->
+<!--        android:toAlpha="float"-->
 
-        />
+<!--        />-->
 
 
 </set>

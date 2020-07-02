@@ -14,7 +14,7 @@
         fresco:layout_constraintLeft_toLeftOf="parent"
         fresco:roundedCornerRadius="10dp"
         fresco:progressBarImage="@drawable/loading"
-        fresco:progressBarImageScaleType="fitXY"
+        fresco:progressBarImageScaleType="centerInside"
         fresco:progressBarAutoRotateInterval="2000"
         />
 

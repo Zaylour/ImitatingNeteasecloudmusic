@@ -4,8 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.zay.music.module.bean.SongSheetTagBean
-import com.zay.music.module.bean.VidedoTagBean
-import com.zay.music.module.mainmodule.video.subFragment.RecommendMvFragment
+
 import com.zay.music.module.songsheetmodule.allsongsheetfragment.AllSongSheet
 
 class SongSheetPagerAdapter(
@@ -36,6 +35,4 @@ class SongSheetPagerAdapter(
     override fun getCount(): Int {
         return datas.size
     }
-
-
 }

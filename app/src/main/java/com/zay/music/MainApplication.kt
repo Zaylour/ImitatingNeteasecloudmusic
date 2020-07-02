@@ -3,6 +3,7 @@ package com.zay.music
 import android.app.Application
 import android.content.Context
 import com.didichuxing.doraemonkit.DoraemonKit
+import com.didichuxing.doraemonkit.DoraemonKitRpc
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.tencent.mmkv.MMKV
 import com.zay.music.data.RetrofitManager
@@ -26,6 +27,8 @@ class MainApplication :Application() {
             RetrofitManager.instance.init()
             //性能检测
             DoraemonKit.install(this,"04a779172b593752cbfacb81480dcd1e")
+
+
             //屏幕适配
             AutoSizeConfig.getInstance().getUnitsManager()
                 .setSupportDP(false)

@@ -58,14 +58,15 @@ dependencies {
     // implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.1'
     //工具库
-    implementation 'com.blankj:utilcode:1.28.0'
+    implementation 'com.blankj:utilcodex:1.29.0'
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'jp.wasabeef:glide-transformations:4.0.1' //高斯模糊api
     //doraemonkit-滴滴开源性能库
-    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.1.8'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit-rpc:3.1.8'
     releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.1.8'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit-leakcanary:3.1.8'
     //屏幕适配
     implementation 'me.jessyan:autosize:1.2.0'
     //圆形图片

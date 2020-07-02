@@ -42,7 +42,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:progressBarAutoRotateInterval="2000"
                         app:progressBarImage="@drawable/loading"
-                        app:progressBarImageScaleType="center"
+                        app:progressBarImageScaleType="centerInside"
                         app:roundedCornerRadius="10dp"
                         />
 

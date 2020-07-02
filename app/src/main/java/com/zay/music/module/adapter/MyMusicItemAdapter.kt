@@ -11,7 +11,7 @@ import com.zay.music.R
 import com.zay.music.module.bean.MyMusicItemBean
 
 class MyMusicItemAdapter : BaseQuickAdapter<MyMusicItemBean, BaseViewHolder>(R.layout.my_music_item2){
-    val roundedCorners = RoundedCorners(20)
+    val roundedCorners = RoundedCorners(40)
     var  options = RequestOptions.bitmapTransform(roundedCorners).dontAnimate()
     var kv = MMKV.defaultMMKV()
     override fun convert(helper: BaseViewHolder, item: MyMusicItemBean) {
